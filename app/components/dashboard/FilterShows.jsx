@@ -7,6 +7,7 @@ function FilterShows() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
+  const [value, setValue] = useState()
  
   const ageOptions = [
     {value: 2, label: "2"},
@@ -66,10 +67,12 @@ function FilterShows() {
     } 
     setFocus(e)
   }
+
   const handleShowAll = () => {
     setShowAll(!showAll)
     setAges([])
     setFocus([])
+    setValue(null)
   }
 
   return (
@@ -82,7 +85,7 @@ function FilterShows() {
         <div className='min-w-[100px]'>
           <SelectFilter
             name="age"
-            value={showAll ? null : ''}
+            value={value}
             options={ageOptions} 
             onChange={updateAges} 
             />
@@ -90,7 +93,7 @@ function FilterShows() {
         <div className='min-w-[200px]'>
           <SelectFilter
             name="focus"
-            value={showAll ? null : ''}
+            value={value}
             options={focusOptions} 
             onChange={updateFocus} 
           />
