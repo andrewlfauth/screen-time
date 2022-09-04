@@ -7,17 +7,17 @@ function ShowCard({show}) {
   const [showFocus, setShowFocus] = useState(false)
   
   return (
-    <div className="flex flex-col rounded-t-md max-w-sm max-w-[300px] md:w-auto">
+    <div className="flex flex-col rounded-t-md max-w-[300px] md:w-auto">
       <div className='relative max-w-sm'>
         {showFocus && 
           <div className="h-full realtive w-full text-white text-center text-3xl font-bold bg-black bg-opacity-80 py-2 absolute rounded-t-md">
             {show.focus.map(f => <h2 key={f}>{f}</h2> )}
           </div>
         }
-        <img loading='lazy' src={show.image} alt={show.title} className="w-full rounded-t-md" />
+        <img loading='lazy' src={show.image} alt={show.title} className="w-full rounded-t-md aspect-auto" />
       </div>
 
-      <div className="bg-purple-500 flex items-center justify-between rounded-b-md shadow p-2">
+      <div className="bg-purple-500 flex items-center justify-between rounded-b-md shadow px-2 py-1">
         <button
           className='relative group' 
           onClick={() => setShowFocus(!showFocus)}

@@ -35,7 +35,7 @@ function Index() {
       </header>
       <div className='flex'>
         <Sidebar />
-        <div className='flex-1'>
+        <div className='flex-1 ml-[75px] lg:ml-[200px]'>
           <Outlet />
         </div>
       </div>

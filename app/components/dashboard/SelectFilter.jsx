@@ -1,6 +1,6 @@
 import Select from 'react-select'
 
-function SelectFilter({name, options, onChange}) {
+function SelectFilter({name, options, onChange, value}) {
   return (
     <>
         <label 
@@ -10,6 +10,7 @@ function SelectFilter({name, options, onChange}) {
           {name[0].toUpperCase() + name.substring(1)}
         </label>
         <Select 
+          value={value}
           name={name}
           isMulti
           options={options}

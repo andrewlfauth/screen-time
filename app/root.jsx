@@ -2,7 +2,7 @@ import tailwindURL from './styles/tailwind'
 import useDarkMode from './components/hooks/useDarkMode';
 import {connect} from './services/db.server'
 import Navbar from './components/Navbar';
-require('dotenv').config()
+// require('dotenv').config()
 const {
   Links,
   LiveReload,
