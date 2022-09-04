@@ -1,13 +1,16 @@
-import {useState, useEffect} from 'react' 
+import {useState, useRef} from 'react' 
 import shows from '~/shows.json'
 import ShowCard from '../ShowCard'
 import SelectFilter from './SelectFilter'
+import Select from 'react-select'
 
 function FilterShows() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
   const [value, setValue] = useState()
+  const ageInputRef = useRef()
+  const focusInputRef = useRef()
  
   const ageOptions = [
     {value: 2, label: "2"},
@@ -69,10 +72,13 @@ function FilterShows() {
   }
 
   const handleShowAll = () => {
+    if (!showAll) {
+      setAges([])
+      setFocus([])
+      ageInputRef.current.clearValue()
+      focusInputRef.current.clearValue()
+    }
     setShowAll(!showAll)
-    setAges([])
-    setFocus([])
-    setValue(null)
   }
 
   return (
@@ -85,19 +91,20 @@ function FilterShows() {
         <div className='min-w-[100px]'>
           <SelectFilter
             name="age"
-            value={value}
+            ref={ageInputRef}
             options={ageOptions} 
             onChange={updateAges} 
-            />
+          />
         </div>
         <div className='min-w-[200px]'>
           <SelectFilter
             name="focus"
-            value={value}
+            ref={focusInputRef}
             options={focusOptions} 
             onChange={updateFocus} 
           />
         </div>
+
         <button
           onClick={handleShowAll}
           className={`${showAll ? "bg-green-300" : "bg-white"} rounded-md border border-gray-300 duration-300 h-[38px] px-5 block self-end font-`}
