@@ -3,21 +3,21 @@ import { useState } from 'react'
 import {FaBaby} from 'react-icons/fa'
 import LikeButton from './LikeButton' 
 
-function ShowCard({show}) {
+function ShowCard({show, likeButton = true}) {
   const [showFocus, setShowFocus] = useState(false)
   
   return (
     <div className="flex flex-col rounded-t-md max-w-[300px] md:w-auto">
       <div className='relative max-w-sm'>
         {showFocus && 
-          <div className="h-full realtive w-full text-white text-center text-3xl font-bold bg-black bg-opacity-80 py-2 absolute rounded-t-md">
+          <div className="h-full realtive w-full text-white text-center text-xl font-bold bg-purple-900 bg-opacity-80 py-2 absolute rounded-t-md">
             {show.focus.map(f => <h2 key={f}>{f}</h2> )}
           </div>
         }
-        <img loading='lazy' src={show.image} alt={show.title} className="w-full rounded-t-md aspect-auto" />
+        <img loading='lazy' src={show.image} alt={show.title} className='w-full aspect-auto rounded-t-md' />
       </div>
 
-      <div className="bg-purple-500 flex items-center justify-between rounded-b-md shadow px-2 py-1">
+      <div className="bg-purple-900 flex items-center justify-between rounded-b-md shadow px-2 py-1">
         <button
           className='relative group' 
           onClick={() => setShowFocus(!showFocus)}
@@ -38,10 +38,12 @@ function ShowCard({show}) {
               Ages
             </div>
             <FaBaby className="mr-1 text-lg" />
-           {show.ages.join(', ')}  
+          {show.ages.join(', ')}  
         </h3>
-        <LikeButton show={show.title} />
+        {likeButton && <LikeButton show={show.title} />}
+        
       </div>
+      
     </div>
   )
 }

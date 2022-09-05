@@ -2,13 +2,11 @@ import {useState, useRef} from 'react'
 import shows from '~/shows.json'
 import ShowCard from '../ShowCard'
 import SelectFilter from './SelectFilter'
-import Select from 'react-select'
 
 function FilterShows() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
-  const [value, setValue] = useState()
   const ageInputRef = useRef()
   const focusInputRef = useRef()
  
@@ -70,7 +68,6 @@ function FilterShows() {
     } 
     setFocus(e)
   }
-
   const handleShowAll = () => {
     if (!showAll) {
       setAges([])
@@ -82,7 +79,7 @@ function FilterShows() {
   }
 
   return (
-    <div className='p-4 rounded-md bg-gray-100 max-w-[600px]'>
+    <div className='p-4 rounded-md bg-gray-100 max-w-[650px]'>
       <h2 className='text-lg font-semibold'>
         Find shows by:
       </h2>
@@ -107,7 +104,7 @@ function FilterShows() {
 
         <button
           onClick={handleShowAll}
-          className={`${showAll ? "bg-green-300" : "bg-white"} rounded-md border border-gray-300 duration-300 h-[38px] px-5 block self-end font-`}
+          className={`${showAll ? "bg-purple-400" : "bg-white"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] px-5 block self-end font-semibold text-neutral-800`}
         >
           Show All
         </button>
