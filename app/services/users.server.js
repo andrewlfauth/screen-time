@@ -69,11 +69,11 @@ export async function getUserSession(request) {
 
 export async function handleLike(request) {
   const formData = await request.formData()
-  const {show, action} = Object.fromEntries(formData)
+  const {show, action, currentFilter} = Object.fromEntries(formData)
   const showIdx = data.findIndex(s => s.title === show)
   const userId = await request.headers.get("Cookie")
   if (userId === 'null' || !userId) return null
-  
+
   if (action === 'like') {
     await Users.findByIdAndUpdate({_id: userId.toString()}, {
       $push: {likes: show}
@@ -93,9 +93,8 @@ export async function handleLike(request) {
     Fs.writeFile('./app/shows.json', JSON.stringify(data, null, 2), 'utf-8', (err) => {
       if (err) {
         console.error(`Could not update filesystem: ${err}`)
-        return null
       }
     })
   }
-  return null
+  return {filter: currentFilter}
 }
