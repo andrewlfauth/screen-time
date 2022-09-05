@@ -1,6 +1,6 @@
 import {FaRegHeart, FaHeart} from 'react-icons/fa'
 import {useState} from 'react'
-import { useFetcher } from '@remix-run/react'
+import {useFetcher} from '@remix-run/react'
 import {userAtom} from '~/routes/dashboard'
 import {useAtom} from 'jotai'
 
@@ -10,7 +10,10 @@ function LikeButton({show}) {
   const [like, setLike] = useState(user?.likes?.includes(show))
 
   return (
-    <fetcher.Form method="post">
+    <fetcher.Form 
+      method="post" action="/dashboard/shows"
+      className='h-[20px]'
+    >
       <input type="hidden" name="show" value={show} />
       <button
         name="action"

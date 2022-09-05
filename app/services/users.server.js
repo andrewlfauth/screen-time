@@ -97,7 +97,5 @@ export async function handleLike(request) {
       }
     })
   }
-
   return null
-  
 }

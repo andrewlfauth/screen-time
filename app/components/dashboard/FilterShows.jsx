@@ -7,6 +7,7 @@ function FilterShows() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
+  const [showPopular, setShowPopular] = useState(false)
   const ageInputRef = useRef()
   const focusInputRef = useRef()
  
@@ -57,14 +58,16 @@ function FilterShows() {
     focus.map(f => f.value).every(f => show.focus.includes(f))
   }
   const updateAges = (e) => {
-    if (showAll && e.length) {
+    if ((showAll || showPopular) && e.length) {
       setShowAll(false)
+      setShowPopular(false)
     } 
     setAges(e)
   }
   const updateFocus = (e) => {
-    if (showAll && e.length) {
+    if ((showAll || showPopular) && e.length) {
       setShowAll(false)
+      setShowPopular(false)
     } 
     setFocus(e)
   }
@@ -74,17 +77,28 @@ function FilterShows() {
       setFocus([])
       ageInputRef.current.clearValue()
       focusInputRef.current.clearValue()
+      setShowPopular(false)
     }
     setShowAll(!showAll)
   }
+  const handleShowPopular = () => {
+    if (!showPopular) {
+      setAges([])
+      setFocus([])
+      ageInputRef.current.clearValue()
+      focusInputRef.current.clearValue()
+      setShowAll(false)
+    }
+    setShowPopular(!showPopular)
+  }
 
   return (
-    <div className='p-4 rounded-md bg-gray-100 max-w-[650px]'>
+    <div className='p-4 rounded-md bg-gray-100 min-w-full md:min-w-[650px]'>
       <h2 className='text-lg font-semibold'>
         Find shows by:
       </h2>
 
-      <div className='flex mt-2 space-x-4'>
+      <div className='flex flex-col sm:flex-row mt-2 sm:space-x-4'>
         <div className='min-w-[100px]'>
           <SelectFilter
             name="age"
@@ -102,17 +116,25 @@ function FilterShows() {
           />
         </div>
 
-        <button
-          onClick={handleShowAll}
-          className={`${showAll ? "bg-purple-400" : "bg-white"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] px-5 block self-end font-semibold text-neutral-800`}
-        >
-          Show All
-        </button>
+        <div className='flex space-x-4 mt-4'>
+          <button
+            onClick={handleShowAll}
+            className={`${showAll ? "bg-purple-400" : "bg-white"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] w-fit px-5 block sm:self-end font-semibold text-neutral-800`}
+          >
+            All
+          </button>
+          <button
+            onClick={handleShowPopular}
+            className={`${showPopular ? "bg-emerald-500" : "bg-white"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] w-fit px-5 block sm:self-end font-semibold text-neutral-800`}
+          >
+            Popular
+          </button>
+        </div>
       </div>
 
-      <div className='grid gap-2 grid-cols-2 mt-4'>
+      <div className='grid gap-2 lg:gap-4 sm:grid-cols-2 mt-4'>
         {
-          !showAll && (ages?.length || focus?.length) ? 
+          !showAll && !showPopular && (ages?.length || focus?.length) ? 
           shows.map(show => {
             return filterShows(show) ? 
               <ShowCard key={show.title} show={show} />
@@ -122,6 +144,13 @@ function FilterShows() {
         {
           showAll && (!ages?.length || !focus?.length) &&
           shows.map(show => <ShowCard key={show.title} show={show} />)
+        }
+        {
+          showPopular && (!ages?.length || !focus?.length) &&
+          shows
+            .sort((a, b) => a.likes > b.likes)
+            .slice(0,6)
+            .map(show => <ShowCard key={show.title} show={show} />)
         }
       </div>
     </div>
