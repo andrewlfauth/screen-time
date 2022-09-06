@@ -14,6 +14,7 @@ const SelectFilter = forwardRef(function SelectFilter({name, options, onChange},
         ref={ref}
         name={name}
         isMulti
+        isSearchable={false}
         options={options}
         onChange={onChange}
       />  

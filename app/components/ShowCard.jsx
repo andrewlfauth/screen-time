@@ -5,7 +5,7 @@ import LikeButton from './LikeButton'
 import AddButton from './AddButton'
 
 
-function ShowCard({show, action, onClick}) {
+function ShowCard({show, action, onClick, added}) {
   const [showFocus, setShowFocus] = useState(false)
   
   return (
@@ -47,7 +47,7 @@ function ShowCard({show, action, onClick}) {
         {action === 'like' ? 
           <LikeButton show={show.title} />
         :
-          <AddButton show={show.image} onClick={onClick} />
+          <AddButton added={added} show={show.image} onClick={onClick} />
         }
         
       </div>

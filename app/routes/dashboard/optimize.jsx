@@ -1,12 +1,13 @@
 import CreatePlan from "../../components/dashboard/CreatePlan"
-import Select from 'react-select'
 import {useState} from 'react'
 import shows from '~/shows.json'
 import ShowCard from "../../components/ShowCard"
+import CurrentPlan from '~/components/optimize/CurrentPlan'
+import LearningGoalsSelect from '~/components/optimize/LearningGoalsSelect'
+import LearningGoalsDisplay from '~/components/optimize/LearningGoalsDisplay'
 
 function Index() {
   const [focus, setFocus] = useState([])
-  const [showInstructions, setShowInstructions] = useState(true)
   const [currentPlan, setCurrentPlan] = useState([])
   const focusOptions = [
     { value: 'animals', label: 'Animals' },
@@ -32,15 +33,8 @@ function Index() {
     { value: 'teamwork', label: 'Teamwork' },
     { value: 'vocabulary', label: 'Vocabulary' }
   ]
-  const filterShows = (show) => {    
-    return focus.map(f => f.value).some(f => show.focus.includes(f)) 
-  }
-  const updateFocus = (e) => {
-    setFocus(e)
-    setShowInstructions(false)
-  }
   const updatePlan = (e) => {
-    const show = e.target.parentElement.name
+    const show = e.target.getAttribute('data-show-image')
     if (currentPlan.includes(show)) {
       return setCurrentPlan(currentPlan.filter(c => c !== show))
     }
@@ -49,45 +43,23 @@ function Index() {
 
   return (
     <div className="px-2">
-      <div className="bg-gray-100 p-4 rounded-md">
-        {
-          showInstructions ? (
-            <>
-              <h2 className='text-lg font-semibold mb-2'>
-                Discover shows that fit your child's needs
-              </h2>
-              <p className="max-w-md">Select the learning goals that you want your child to focus on and we'll match you with shows with the same focus.</p>
-            </>
-          ) : <CreatePlan />
-        }
-      </div>
-
+      <CurrentPlan 
+        currentPlan={currentPlan}
+        handleRemoveImage={(e) => 
+          setCurrentPlan(currentPlan.filter(s => 
+            s !== e.target.parentElement.getAttribute('data-image')))
+        } 
+      />
       <div className="bg-gray-100 rounded-md p-2 mt-2 md:max-w-[500px]">
-        <label 
-          htmlFor="focus" 
-          className='text-xl font-bold mb-2 block'
-        >
-          Learning Goals
-        </label>
-        <Select
-          placeholder='e.g. "Empathy"'
-          className="w-fit min-w-[200px]" 
-          name="focus"
-          isMulti
+        <LearningGoalsSelect 
           options={focusOptions}
-          onChange={updateFocus}
+          onChange={(e) => setFocus(e)}
         />
-        <div className="grid gap-2 lg:gap-4 md:grid-cols-2 mt-4">
-          {focus.length ? shows.map(s => {
-            return filterShows(s) ? 
-              <ShowCard 
-                key={s.title} 
-                show={s} 
-                action="add"
-                onClick={updatePlan} 
-              /> : ""
-          }) : ""}
-        </div>
+        <LearningGoalsDisplay 
+          focus={focus}
+          onClick={updatePlan}
+          currentPlan={currentPlan}
+        />
       </div>
     </div>
 
