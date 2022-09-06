@@ -10,7 +10,7 @@ function FilterShows() {
   const [showPopular, setShowPopular] = useState(false)
   const ageInputRef = useRef()
   const focusInputRef = useRef()
- 
+
   const ageOptions = [
     {value: 2, label: "2"},
     {value: 3, label: "3"},
@@ -78,7 +78,7 @@ function FilterShows() {
       ageInputRef.current.clearValue()
       focusInputRef.current.clearValue()
       setShowPopular(false)
-    }
+    }    
     setShowAll(!showAll)
   }
   const handleShowPopular = () => {
@@ -95,9 +95,8 @@ function FilterShows() {
   return (
     <div className='p-4 rounded-md bg-gray-100 min-w-full md:min-w-[650px]'>
       <h2 className='text-lg font-semibold'>
-        Find shows by:
+        Find shows by
       </h2>
-
       <div className='flex flex-col sm:flex-row mt-2 sm:space-x-4'>
         <div className='min-w-[100px]'>
           <SelectFilter

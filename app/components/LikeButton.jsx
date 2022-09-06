@@ -8,9 +8,9 @@ function LikeButton({show}) {
   const [user] = useAtom(userAtom)
   const fetcher = useFetcher()
   const [like, setLike] = useState(user?.likes?.includes(show))
-
+  
   return (
-    <fetcher.Form 
+    <fetcher.Form
       method="post" action="/dashboard/shows"
       className='h-[20px]'
     >

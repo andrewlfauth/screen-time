@@ -3,7 +3,7 @@ import {RiLogoutCircleRLine} from 'react-icons/ri'
 
 function ShowsTab({expand}) {
   return (
-    <div>
+    <div className='select-none'>
       <Link 
         to='/logout'
         className='flex justify-between font-semibold text-2xl tracking-tight items-center shadow bg-white group p-4 rounded-md'
