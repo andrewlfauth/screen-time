@@ -1,8 +1,6 @@
 import {redirect} from '@remix-run/node'
 import Users from '~/models/Users'
 import bcrypt from 'bcrypt'
-import data from '../shows'
-const Fs = require('fs')
 
 export async function createUser(request) {
   const formData = await request.formData()
@@ -69,32 +67,18 @@ export async function getUserSession(request) {
 
 export async function handleLike(request) {
   const formData = await request.formData()
-  const {show, action, currentFilter} = Object.fromEntries(formData)
-  const showIdx = data.findIndex(s => s.title === show)
   const userId = await request.headers.get("Cookie")
+  const {show, action} = Object.fromEntries(formData)
   if (userId === 'null' || !userId) return null
 
   if (action === 'like') {
     await Users.findByIdAndUpdate({_id: userId.toString()}, {
       $push: {likes: show}
     })
-    data[showIdx].likes++
-    Fs.writeFile('./app/shows.json', JSON.stringify(data, null, 2), 'utf-8', (err) => {
-      if (err) {
-        console.error(`Could not update filesystem: ${err}`)
-        return null
-      }
-    })
   } else {
     await Users.findByIdAndUpdate({_id: userId.toString()}, {
       $pull: {likes: show}
     })
-    data[showIdx].likes-- 
-    Fs.writeFile('./app/shows.json', JSON.stringify(data, null, 2), 'utf-8', (err) => {
-      if (err) {
-        console.error(`Could not update filesystem: ${err}`)
-      }
-    })
   }
-  return {filter: currentFilter}
+  return null
 }
