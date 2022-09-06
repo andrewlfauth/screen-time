@@ -1,9 +1,11 @@
 import { RiArrowUpDownFill } from 'react-icons/ri'
 import { useState } from 'react'
 import {FaBaby} from 'react-icons/fa'
-import LikeButton from './LikeButton' 
+import LikeButton from './LikeButton'
+import AddButton from './AddButton'
 
-function ShowCard({show, likeButton = true}) {
+
+function ShowCard({show, action, onClick}) {
   const [showFocus, setShowFocus] = useState(false)
   
   return (
@@ -42,7 +44,11 @@ function ShowCard({show, likeButton = true}) {
           {show.ages.join(', ')}  
         </h3>
         
-        {likeButton && <LikeButton show={show.title} />}
+        {action === 'like' ? 
+          <LikeButton show={show.title} />
+        :
+          <AddButton show={show.image} onClick={onClick} />
+        }
         
       </div>
       
