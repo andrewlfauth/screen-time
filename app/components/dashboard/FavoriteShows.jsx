@@ -26,10 +26,10 @@ function FavoriteShows({likes}) {
           <div className='mt-4 flex'>
             <div>
               <p className='w-[250px] select-none'>
-                To save a show to favorites click underneath show's image.
+                To save a show to favorites click underneath the show's image.
               </p>
             </div>
-            <div onClick={() => setFillHeart(!fillHeart)}>
+            <div onClick={() => setFillHeart(!fillHeart)} className="-ml-1">
               {fillHeart ? 
                 <FaHeart className='text-2xl cursor-pointer -ml-4 text-gray-900' />
                 :

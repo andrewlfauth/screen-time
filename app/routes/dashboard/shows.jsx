@@ -1,4 +1,4 @@
-import FilterShows from "~/components/dashboard/FilterShows"
+import ShowsFilter from "~/components/dashboard/ShowsFilter"
 import FeaturedShow from '~/components/dashboard/FeaturedShow'
 import {handleLike, getUser} from '../../services/users.server'
 import {useLoaderData} from '@remix-run/react'
@@ -21,7 +21,8 @@ function Index() {
   setUser(userData)
   return (
     <div className="px-2 flex flex-col lg:space-x-4 items-start justify-between">
-      <FilterShows />
+      
+      <ShowsFilter />
       {/* <FeaturedShow /> */}
     </div>
   )

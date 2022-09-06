@@ -3,7 +3,7 @@ import shows from '~/shows.json'
 import ShowCard from '../ShowCard'
 import SelectFilter from './SelectFilter'
 
-function FilterShows() {
+function ShowsFilter() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
@@ -156,4 +156,4 @@ function FilterShows() {
   )
 }
 
-export default FilterShows
+export default ShowsFilter

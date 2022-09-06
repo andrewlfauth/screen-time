@@ -1,7 +1,7 @@
 import ShowsTab from './ShowsTab'
 import FavoritesTab from './FavoritesTab'
 import LogoutTab from './LogoutTab'
-import TargetTab from './TargetTab'
+import OptimizeTab from './OptimizeTab'
 import {useState} from 'react'
 import {AiOutlineDoubleRight} from 'react-icons/ai'
 
@@ -10,7 +10,7 @@ function Sidebar() {
 
   return (
     <div className={`${expand ? "z-10 w-[200px] px-2 lg:px-2" : "px-1"} bg-gray-100 py-2 rounded-md fixed z-10 lg:w-[200px] duration-300 space-y-2`}>
-      <TargetTab />
+      <OptimizeTab expand={expand} />
       <ShowsTab expand={expand} />
       <FavoritesTab expand={expand} />
       <div
