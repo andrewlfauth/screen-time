@@ -53,7 +53,7 @@ function Index() {
   }
   
   return (
-    <div className="px-2">
+    <div className="px-2 overflow-x-hidden">
       <CurrentPlan
         action={action}
         currentPlan={currentPlan}

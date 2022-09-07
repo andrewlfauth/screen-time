@@ -22,12 +22,12 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
       <div className='space-x-2 mt-[10px] -ml-2'>
         <button 
           type="submit"
-          className='px-4 rounded h-full font-semibold bg-emerald-500'
+          className='px-4 rounded h-full font-semibold text-white bg-emerald-500'
         >
           Save
         </button>
         <button
-          className='bg-gray-200 h-full font-semibold px-4 rounded'
+          className='bg-gray-200 h-full text-neutral-500 font-semibold px-4 rounded'
           onClick={goBack}
         >
           Back

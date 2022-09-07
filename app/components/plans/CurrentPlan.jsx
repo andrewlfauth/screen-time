@@ -23,13 +23,13 @@ useEffect(() => {
         <>
             <button 
             onClick={() => setDone(true)}
-            className='font-semibold text-sm px-4 py-1 text-emerald-900 text-center ml-4 mr-2 rounded-full bg-white shadow'
+            className='font-semibold text-sm px-4 py-1 text-white bg-emerald-500 text-center ml-4 mr-2 rounded-full shadow'
           >
             Done
           </button>
           <button 
             onClick={clearPlan}
-            className='font-semibold text-sm py-1 rounded-full shadow px-4 text-center bg-gray-50 text-pruple-900'
+            className='font-semibold text-sm py-1 rounded-full shadow px-4 text-center bg-gray-50 text-neutral-500'
           >
             Clear
           </button>
