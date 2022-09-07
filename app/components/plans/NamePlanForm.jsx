@@ -4,11 +4,11 @@ import { Form } from '@remix-run/react'
 const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, clearPlan}, ref) {
   return (
     <Form method="post" className='flex max-h-[116px]'>
-      <div className='flex shadow border flex-col px-4 rounded bg-white'>
+      <div className='relative px-4 pt-2 '>
         <input type="hidden" name="plan" value={currentPlan} />
         <label 
           htmlFor="planName"
-          className='font-semibold text-sm'
+          className='font-semibold -top-[9px] text-purple-900 absolute text-xs'
         >
             Name your plan
           </label>
@@ -16,13 +16,13 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, clearPlan}, 
           ref={ref}
           type="text" name="planName" required
           placeholder='e.g. "Manners & Curiosity"' 
-          className='outline-none'
+          className='outline-none shadow-inner placeholder:text-sm py-2 px-2 rounded'
         />
       </div>
-      <div className='space-x-2 ml-2'>
+      <div className='space-x-2 mt-[10px] -ml-2'>
         <button 
           type="submit"
-          className='h-full px-4 rounded font-semibold bg-emerald-500'
+          className='px-4 rounded h-full font-semibold bg-emerald-500'
         >
           Save
         </button>

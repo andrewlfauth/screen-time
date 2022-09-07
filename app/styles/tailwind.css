@@ -627,6 +627,38 @@ video {
   top: 0px;
 }
 
+.-top-4 {
+  top: -1rem;
+}
+
+.-bottom-6 {
+  bottom: -1.5rem;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-\[8px\] {
+  top: -8px;
+}
+
+.-top-\[10px\] {
+  top: -10px;
+}
+
+.-top-\[12px\] {
+  top: -12px;
+}
+
+.-top-\[13px\] {
+  top: -13px;
+}
+
+.-top-\[9px\] {
+  top: -9px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -718,6 +750,22 @@ video {
   margin-right: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-\[6px\] {
+  margin-top: 6px;
+}
+
+.mt-\[10px\] {
+  margin-top: 10px;
+}
+
+.-ml-2 {
+  margin-left: -0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -760,6 +808,14 @@ video {
 
 .h-\[45px\] {
   height: 45px;
+}
+
+.h-\[32px\] {
+  height: 32px;
+}
+
+.h-\[30px\] {
+  height: 30px;
 }
 
 .max-h-\[116px\] {
@@ -914,6 +970,10 @@ video {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1028,6 +1088,16 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
+}
+
+.border-red-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(153 27 27 / var(--tw-border-opacity));
 }
 
 .border-opacity-40 {
@@ -1155,6 +1225,14 @@ video {
 
 .pt-\[88px\] {
   padding-top: 88px;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -1303,6 +1381,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1334,6 +1418,16 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.placeholder\:text-sm::-moz-placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.placeholder\:text-sm::placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .hover\:scale-110:hover {
