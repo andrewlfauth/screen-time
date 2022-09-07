@@ -21,8 +21,6 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
       </div>
       <div className='space-x-2 mt-[10px] -ml-2'>
         <button 
-          name="action"
-          value="create"
           type="submit"
           className='px-4 rounded h-full font-semibold text-white bg-emerald-500'
         >

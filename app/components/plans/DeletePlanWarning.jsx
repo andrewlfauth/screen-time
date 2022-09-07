@@ -9,11 +9,9 @@ function DeletePlanWarning({planName, show, cancel}) {
         <span className='font-medium text-lg text-purple-900'>{planName}</span>
       </p>
         <div className="flex space-x-4 mt-4 justify-center">
-          <Form>
+          <Form method="post">
             <button 
               type="submit"
-              name="action"
-              value="delete"
               className="px-4 py-2 hover:bg-opacity-90 rounded bg-emerald-400 font-semibold duration-100"
             >
               Yes 👍

@@ -107,3 +107,13 @@ export async function createPlan(request) {
   
   return {success: true}
 }
+
+export async function deletePlan(request, params) {
+  const userId = await request.headers.get("Cookie")
+  if (userId === 'null' || !userId) return null
+  const plan = await params.plan
+  await Users.findByIdAndUpdate({_id: userId.toString()}, {
+    $pull: {plans: {name: plan}}
+  })
+  return redirect('/dashboard/plans')
+}
