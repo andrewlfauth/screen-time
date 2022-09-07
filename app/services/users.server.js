@@ -97,7 +97,7 @@ export async function createPlan(request) {
   const planArr = plan.split(",")
   
   await Users.findByIdAndUpdate({_id: userId.toString()}, {
-    $push: {plans: {name: planName, shows: planArr}}
+    $push: {plans: {name: planName, images: planArr}}
   })
   
   return null
