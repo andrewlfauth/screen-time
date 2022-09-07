@@ -1,6 +1,7 @@
 import {redirect} from '@remix-run/node'
 import Users from '~/models/Users'
 import bcrypt from 'bcrypt'
+import shows from '~/shows.json'
 
 export async function createUser(request) {
   const formData = await request.formData()
@@ -116,4 +117,12 @@ export async function deletePlan(request, params) {
     $pull: {plans: {name: plan}}
   })
   return redirect('/dashboard/plans')
+}
+
+export async function getPlan(request, params) {
+  const planName = await params.plan
+  const user = await getUser(request)
+  const plan = user.plans.find(p => p.name === planName)
+  const planShows = shows.filter((s) => plan.images.includes(s.image))
+  return {name: plan.name, show: planShows}
 }

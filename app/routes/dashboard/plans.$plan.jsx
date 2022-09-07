@@ -1,21 +1,18 @@
 import {getUser, deletePlan} from '~/services/users.server'
 import { useLoaderData} from '@remix-run/react'
 import ShowCard from '~/components/ShowCard'
-import shows from '~/shows.json'
+// import shows from '~/shows.json'
 import {BsTrashFill} from 'react-icons/bs'
 import { useState } from 'react'
 import DeletePlanWarning from '~/components/plans/DeletePlanWarning'
+import { getPlan } from '~/services/users.server'
 
 export async function action({request, params}) {
   return deletePlan(request, params)
 }
 
 export async function loader({request, params}) {
-  const planName = await params.plan
-  const user = await getUser(request)
-  const plan = user.plans.find(p => p.name === planName)
-  const planShows = shows.filter((s) => plan.images.includes(s.image))
-  return {name: plan.name, show: planShows}
+  return getPlan(request, params)
 }
 
 function Index() {
