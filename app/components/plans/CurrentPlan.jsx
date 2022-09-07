@@ -15,8 +15,25 @@ useEffect(() => {
 
   return (
     <div className="bg-gray-100 p-4 rounded-md min-h-[125px]">
-      <h2 className='text-lg items-center flex font-semibold mb-2'>
+      <h2 className='text-lg items-end flex font-semibold mb-2'>
         Create Plan
+        {currentPlan.length ? (
+        <>
+            <button 
+            onClick={() => setDone(true)}
+            className='font-semibold text-sm px-4 py-1 text-emerald-900 text-center ml-4 mr-2 rounded-full bg-white shadow'
+          >
+            Done
+          </button>
+          <button 
+            onClick={clearPlan}
+            className='font-semibold text-sm py-1 rounded-full shadow px-4 text-center bg-gray-50 text-pruple-900'
+          >
+            Clear
+          </button>
+        </>
+        ) : ""}
+
         {action?.error && (
           <Flash duration={5000}>
             <span className='text-base ml-1 text-red-500'
@@ -76,22 +93,7 @@ useEffect(() => {
                     </button>
                   </div>
                 </Form>
-              ) : (
-                <div className='space-x-2 ml-2'>
-                  <button 
-                    onClick={() => setDone(true)}
-                    className='border border-gray-400 bg-white font-semibold rounded w-20 h-[45px]'
-                  >
-                    Done
-                  </button>
-                  <button 
-                    onClick={clearPlan}
-                    className='border border-gray-400 bg-gray-200 font-semibold rounded w-20 h-[45px]'
-                  >
-                    Clear
-                  </button>
-                </div>
-              )
+              ) : ""
             }
             </div>
           </div>
