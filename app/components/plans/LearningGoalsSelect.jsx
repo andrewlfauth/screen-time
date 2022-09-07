@@ -5,7 +5,7 @@ function LearningGoalsSelect({options, onChange}) {
     <>
       <label 
         htmlFor="focus" 
-        className='text-xl font-bold mb-2 block'
+        className='text-lg font-semibold mb-2 block'
       >
         Learning Goals
       </label>
