@@ -1,7 +1,7 @@
 import {forwardRef} from 'react'
 import { Form } from '@remix-run/react'
 
-const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, clearPlan}, ref) {
+const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref) {
   return (
     <Form method="post" className='flex max-h-[116px]'>
       <div className='relative px-4 pt-2 '>
@@ -28,7 +28,7 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, clearPlan}, 
         </button>
         <button
           className='bg-gray-200 h-full font-semibold px-4 rounded'
-          onClick={clearPlan}
+          onClick={goBack}
         >
           Back
         </button>

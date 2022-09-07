@@ -11,6 +11,7 @@ function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
 useEffect(() => {
   if (action?.success) {
     clearPlan()
+    setDone(false)
   }
 }, [action])
 
@@ -65,7 +66,7 @@ useEffect(() => {
               done ? (
                 <NamePlanForm 
                   currentPlan={currentPlan}
-                  clearPlan={clearPlan}
+                  goBack={() => setDone(false)}
                   ref={inputRef}
                 />
               ) : ""
