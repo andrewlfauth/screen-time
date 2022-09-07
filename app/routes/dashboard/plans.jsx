@@ -7,7 +7,8 @@ import { createPlan, getUser } from "~/services/users.server"
 import { useLoaderData, useActionData } from '@remix-run/react'
 
 export async function action({request}) {
-  return createPlan(request)
+  // return createPlan(request)
+  return null
 }
 
 export async function loader({request}) {
