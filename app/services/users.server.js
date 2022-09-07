@@ -12,7 +12,12 @@ export async function createUser(request) {
 
 
   const hash = await bcrypt.hash(password, 10)
-  const user = await Users.create({username, password: hash, likes: []})
+  const user = await Users.create({
+    username,
+    password: hash,
+    likes: [],
+    plans: []
+  })
 
   if (!user) return {error: "Something went wrong 🤖"}
   
@@ -80,5 +85,20 @@ export async function handleLike(request) {
       $pull: {likes: show}
     })
   }
+  return null
+}
+
+export async function createPlan(request) {
+  const userId = await request.headers.get("Cookie")
+  if (userId === 'null' || !userId) return null
+  
+  const formData = await request.formData()
+  const {planName, plan} = Object.fromEntries(formData)
+  const planArr = plan.split(",")
+  
+  await Users.findByIdAndUpdate({_id: userId.toString()}, {
+    $push: {plans: {name: planName, shows: planArr}}
+  })
+  
   return null
 }

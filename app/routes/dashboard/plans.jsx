@@ -1,12 +1,23 @@
-import CreatePlan from "../../components/dashboard/CreatePlan"
 import {useState} from 'react'
-import shows from '~/shows.json'
-import ShowCard from "../../components/ShowCard"
-import CurrentPlan from '~/components/optimize/CurrentPlan'
-import LearningGoalsSelect from '~/components/optimize/LearningGoalsSelect'
-import LearningGoalsDisplay from '~/components/optimize/LearningGoalsDisplay'
+import SavedPlans from '~/components/plans/SavedPlans'
+import CurrentPlan from '~/components/plans/CurrentPlan'
+import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
+import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
+import { createPlan, getUser } from "~/services/users.server"
+import { useLoaderData } from '@remix-run/react'
+
+export async function action({request}) {
+  createPlan(request)
+  return null
+}
+
+export async function loader({request}) {
+  const user = await getUser(request)
+  return user.plans
+}
 
 function Index() {
+  const plans = useLoaderData()
   const [focus, setFocus] = useState([])
   const [currentPlan, setCurrentPlan] = useState([])
   const focusOptions = [
@@ -40,7 +51,7 @@ function Index() {
     }
     return setCurrentPlan([...currentPlan, show])
   }
-
+  
   return (
     <div className="px-2">
       <CurrentPlan 
@@ -60,6 +71,10 @@ function Index() {
           onClick={updatePlan}
           currentPlan={currentPlan}
         />
+      </div>
+
+      <div className="bg-gray-100 rounded-md p-2 mt-2 md:max-w-[500px]">
+        <SavedPlans plans={plans} />
       </div>
     </div>
 

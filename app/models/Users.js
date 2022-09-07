@@ -3,7 +3,8 @@ import mongoose from 'mongoose'
 const UsersSchema = mongoose.Schema({
   username: String,
   password: String,
-  likes: Array  
+  likes: Array,
+  plans: Array,  
 }, 
 {
   timestamps: true
