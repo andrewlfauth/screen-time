@@ -4,7 +4,7 @@ import CurrentPlan from '~/components/plans/CurrentPlan'
 import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
 import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
 import { createPlan, getUser } from "~/services/users.server"
-import { useLoaderData } from '@remix-run/react'
+import { useLoaderData, Outlet } from '@remix-run/react'
 
 export async function action({request}) {
   createPlan(request)
@@ -76,6 +76,7 @@ function Index() {
       <div className="bg-gray-100 rounded-md p-2 mt-2 md:max-w-[500px]">
         <SavedPlans plans={plans} />
       </div>
+      <Outlet />
     </div>
 
   )

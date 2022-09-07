@@ -1,3 +1,4 @@
+import PlanLink from './PlanLink'
 
 function SavedPlans({plans}) {
   return (
@@ -5,8 +6,8 @@ function SavedPlans({plans}) {
       <h2 className='text-lg items-center font-semibold mb-2'>
         Saved Plans
       </h2>
-      {plans.map((plan, i) => (
-        <h3 key={i}>{plan.name}</h3>
+      {plans.map((plan) => (
+        <PlanLink key={plan.name} plan={plan} />
        ))}
     </div>
   )
