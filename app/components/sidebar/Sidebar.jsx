@@ -15,17 +15,19 @@ function Sidebar() {
   }, [transition.state])
 
   return (
-    <div className={`${expand ? "z-10 w-[200px] px-2 lg:px-2" : "px-1"} bg-gray-100 py-2 rounded-md fixed z-10 lg:w-[200px] duration-300 space-y-2`}>
-      <PlansTab expand={expand} />
-      <ShowsTab expand={expand} />
-      <FavoritesTab expand={expand} />
-      <div
-        className='lg:hidden bg-white rounded-md p-4 shadow cursor-pointer group'
-        onClick={() => setExpand(!expand)}
-      >
-        <AiOutlineDoubleRight 
-          className={`${expand ? "translate-x-16 rotate-180 duration-300" : 'duration-200'} text-3xl mx-auto group-hover:scale-110`} 
-        />
+    <div className={`${expand ? "z-10 w-[200px] px-2" : "px-1 lg:px-2"} bg-gray-100 pb-2 pt-[88px] rounded-md fixed z-10 top-0 lg:w-[205px] duration-300 h-screen flex flex-col justify-between`}>
+      <div className='space-y-2'>
+        <PlansTab expand={expand} />
+        <ShowsTab expand={expand} />
+        <FavoritesTab expand={expand} />
+        <div
+          className='lg:hidden bg-white rounded-md p-4 shadow cursor-pointer group'
+          onClick={() => setExpand(!expand)}
+        >
+          <AiOutlineDoubleRight 
+            className={`${expand ? "translate-x-16 rotate-180 duration-300" : 'duration-200'} text-3xl mx-auto group-hover:scale-110`} 
+          />
+        </div>
       </div>
       <LogoutTab expand={expand} />
     </div>  

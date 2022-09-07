@@ -1,13 +1,16 @@
 import {FaRegHeart, FaHeart} from 'react-icons/fa'
 import {useState} from 'react'
-import {useFetcher} from '@remix-run/react'
+import {useFetcher, useLocation} from '@remix-run/react'
 import {userAtom} from '~/routes/dashboard'
 import {useAtom} from 'jotai'
 
 function LikeButton({show}) {
+  const path = useLocation().pathname
   const [user] = useAtom(userAtom)
   const fetcher = useFetcher()
-  const [like, setLike] = useState(user?.likes?.includes(show))
+  const [like, setLike] = useState(
+    path === '/dashboard/favorites' ? true : user?.likes?.includes(show)
+  )
   
   return (
     <fetcher.Form
