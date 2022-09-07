@@ -1,7 +1,6 @@
-import {getPlan, deletePlan} from '~/services/users.server'
+import {getPlan, deletePlan} from '~/services/plans.server'
 import { useLoaderData} from '@remix-run/react'
 import ShowCard from '~/components/ShowCard'
-// import shows from '~/shows.json'
 import {BsTrashFill} from 'react-icons/bs'
 import { useState } from 'react'
 import DeletePlanWarning from '~/components/plans/DeletePlanWarning'

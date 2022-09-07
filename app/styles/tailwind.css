@@ -822,6 +822,12 @@ video {
   height: 30px;
 }
 
+.h-max {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 .max-h-\[116px\] {
   max-height: 116px;
 }

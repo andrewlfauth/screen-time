@@ -3,7 +3,8 @@ import SavedPlans from '~/components/plans/SavedPlans'
 import CurrentPlan from '~/components/plans/CurrentPlan'
 import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
 import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
-import { createPlan, getUser } from "~/services/users.server"
+import { getUser } from "~/services/users.server"
+import { createPlan } from "~/services/plans.server"
 import { useLoaderData, useActionData } from '@remix-run/react'
 
 export async function action({request}) {
@@ -53,7 +54,7 @@ function Index() {
   }
   
   return (
-    <div className="px-2 overflow-x-hidden">
+    <div className="px-2 overflow-x-hidden h-max">
       <CurrentPlan
         action={action}
         currentPlan={currentPlan}
