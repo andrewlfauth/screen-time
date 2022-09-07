@@ -1,14 +1,34 @@
 import CurrentPlanImage from './CurrentPlanImage'
-import {useState} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import {Form} from '@remix-run/react'
+import Flash from '~/components/Flash'
 
-function CurrentPlan({currentPlan, handleRemoveImage}) {
+function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
   const [done, setDone] = useState(false)
+  const inputRef = useRef()
+
+useEffect(() => {
+  if (action?.success) {
+    clearPlan()
+  }
+}, [action])
 
   return (
-    <div className="bg-gray-100 p-4 rounded-md min-h-[116px]">
-      <h2 className='text-lg items-center font-semibold mb-2'>
+    <div className="bg-gray-100 p-4 rounded-md min-h-[125px]">
+      <h2 className='text-lg items-center flex font-semibold mb-2'>
         Create Plan
+        {action?.error && (
+          <Flash duration={5000}>
+            <span className='text-base ml-1 text-red-500'
+            >{"- "}{action.error}</span>
+          </Flash>
+        )}
+        {action?.success && (
+          <Flash duration={5000}>
+            <span className='text-base ml-1 text-emerald-500'
+            >{"- "}Success!</span>
+          </Flash>
+        )}
       </h2>
       {
         !currentPlan.length ? (
@@ -35,7 +55,8 @@ function CurrentPlan({currentPlan, handleRemoveImage}) {
                         Name your plan
                       </label>
                     <input 
-                      type="text" name="planName"
+                      ref={inputRef}
+                      type="text" name="planName" required
                       placeholder='e.g. "Manners & Curiosity"' 
                       className='outline-none'
                     />
@@ -56,12 +77,20 @@ function CurrentPlan({currentPlan, handleRemoveImage}) {
                   </div>
                 </Form>
               ) : (
-              <button 
-                onClick={() => setDone(true)}
-                className='border-2 border-gray-400 bg-white font-semibold rounded w-20 h-[45px]'
-              >
-                Done
-              </button>
+                <div className='space-x-2 ml-2'>
+                  <button 
+                    onClick={() => setDone(true)}
+                    className='border border-gray-400 bg-white font-semibold rounded w-20 h-[45px]'
+                  >
+                    Done
+                  </button>
+                  <button 
+                    onClick={clearPlan}
+                    className='border border-gray-400 bg-gray-200 font-semibold rounded w-20 h-[45px]'
+                  >
+                    Clear
+                  </button>
+                </div>
               )
             }
             </div>

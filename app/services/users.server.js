@@ -93,12 +93,17 @@ export async function createPlan(request) {
   if (userId === 'null' || !userId) return null
   
   const formData = await request.formData()
-  const {planName, plan} = Object.fromEntries(formData)
+  const {planName, plan, focuses} = Object.fromEntries(formData)
   const planArr = plan.split(",")
-  
+  const user = await Users.findById({_id: userId.toString()})
+  console.log(focuses)
+  if (user.plans.some(p => p.name === planName)) {
+    return {error: "Plan names must be unique"}
+  }
+
   await Users.findByIdAndUpdate({_id: userId.toString()}, {
     $push: {plans: {name: planName, images: planArr}}
   })
   
-  return null
+  return {success: true}
 }
