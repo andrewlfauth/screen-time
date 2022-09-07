@@ -3,12 +3,12 @@ import { Form } from '@remix-run/react'
 
 const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref) {
   return (
-    <Form method="post" className='flex max-h-[116px]'>
-      <div className='relative px-4 pt-2 '>
+    <Form method="post" className='flex max-h-[116px] mt-6'>
+      <div className='relative pt-2 '>
         <input type="hidden" name="plan" value={currentPlan} />
         <label 
           htmlFor="planName"
-          className='font-semibold -top-[9px] text-purple-900 absolute text-xs'
+          className='font-semibold -top-[12px] text-purple-900 absolute text-sm'
         >
             Name your plan
           </label>
@@ -19,7 +19,7 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
           className='outline-none shadow-inner placeholder:text-sm py-2 px-2 rounded'
         />
       </div>
-      <div className='space-x-2 mt-[10px] -ml-2'>
+      <div className='space-x-2 mt-[10px] ml-2'>
         <button 
           type="submit"
           className='px-4 rounded h-full font-semibold text-white bg-emerald-500'

@@ -54,7 +54,7 @@ function Index() {
   }
   
   return (
-    <div className="px-2 overflow-x-hidden h-max">
+    <div className="px-2 overflow-x-hidden">
       <CurrentPlan
         action={action}
         currentPlan={currentPlan}

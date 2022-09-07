@@ -16,7 +16,7 @@ useEffect(() => {
 }, [action])
 
   return (
-    <div className="bg-gray-100 p-4 rounded-md min-h-[125px]">
+    <div className="bg-gray-100 p-4 rounded-md min-h-[125px] w-[500px]">
       <h2 className='text-lg items-end flex font-semibold mb-2'>
         Create Plan
         {currentPlan.length ? (
@@ -48,13 +48,16 @@ useEffect(() => {
             >{"- "}Success!</span>
           </Flash>
         )}
+
       </h2>
+      <div>
+
       {
         !currentPlan.length ? (
           <p className="max-w-md">Select the learning goals that you want your child to focus on and we'll match you with shows with the same focus.</p>
         ) : (
-          <div>
-            <div className="flex flex-wrap items-center">
+          <div className='flex flex-col'>
+          <div className="flex flex-wrap items-center">
               {currentPlan.map(s => 
                 <CurrentPlanImage 
                   key={s} 
@@ -62,19 +65,20 @@ useEffect(() => {
                   handleRemoveImage={handleRemoveImage} 
                 />
               )}
+           </div>
+           
             {
               done ? (
                 <NamePlanForm 
-                  currentPlan={currentPlan}
-                  goBack={() => setDone(false)}
-                  ref={inputRef}
+                currentPlan={currentPlan}
+                goBack={() => setDone(false)}
+                ref={inputRef}
                 />
-              ) : ""
-            }
-            </div>
+                ) : ""
+              }
           </div>
-        )
-      }
+          )}
+        </div>
     </div>
   )
 }
