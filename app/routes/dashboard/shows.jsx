@@ -19,6 +19,7 @@ function Index() {
   const userData = useLoaderData()
   const [, setUser] = useAtom(userAtom)
   setUser(userData)
+
   return (
     <div className="px-2 flex flex-col lg:space-x-4 items-start justify-between">
       

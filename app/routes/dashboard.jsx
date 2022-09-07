@@ -23,19 +23,19 @@ function Index() {
   return (
     <div className='py-6'>
       <header className='pb-6'>
-        <h1 className="text-center select-none text-4xl font-semibold mx-auto">
+        <h1 className="text-center flex justify-center items-center select-none text-3xl font-semibold">
           {pathArr.map((s,i) => (
             i === pathArr.length - 1 ? 
-              <span className='text-emerald-700'>{s.replaceAll('%20', " ")}</span> :
-              <>
+              <span key={i} className='text-emerald-700 text-4xl'>{s.replaceAll('%20', " ")}</span> :
+              <div key={i} className="flex">
                 <Link
                   to={i === 0 ? '/dashboard' : `/dashboard/${s}`} 
-                  className='text-3xl text-gray-500 hover:border-b-2 border-gray-500'
+                  className='text-gray-500 hover:underline'
                 >
                   {s}
                 </Link> 
-                <span className='text-purple-900'>{' > '}</span>
-              </>
+                <span className='text-purple-900 mx-[5px]'>{`>`}</span>
+              </div>
           ))}
         </h1>
       </header>

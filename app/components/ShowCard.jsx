@@ -5,14 +5,14 @@ import LikeButton from './LikeButton'
 import AddButton from './AddButton'
 
 
-function ShowCard({show, action, onClick, added}) {
+function ShowCard({show, action = "like", onClick, added}) {
   const [showFocus, setShowFocus] = useState(false)
   
   return (
     <div className="flex flex-col shadow rounded-t-md max-w-[300px] md:w-auto">
       <div className='relative max-w-sm'>
         {showFocus && 
-          <div className="h-full realtive w-full text-white text-center text-xl font-bold bg-purple-900 bg-opacity-80 py-2 absolute rounded-t-md">
+          <div className="h-full realtive w-full text-white text-center text-xl font-bold bg-purple-900 bg-opacity-80 py-2 absolute rounded-t-md overflow-y-auto">
             {show.focus.map(f => <h2 key={f}>{f}</h2> )}
           </div>
         }

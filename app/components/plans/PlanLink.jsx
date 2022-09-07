@@ -18,7 +18,7 @@ function PlanLink({plan}) {
   return (
     <Link
       to={`/dashboard/plans/${plan.name}`}
-      className="bg-white font-bold text-lg flex items-start rounded-md shadow p-4 block w-fit border-2 border:transparent hover:border-emerald-500"
+      className="bg-white font-bold text-lg flex items-start rounded-md shadow p-4 block w-fit border-2 border-white hover:border-emerald-500"
     >
       {plan.name}
       <img 

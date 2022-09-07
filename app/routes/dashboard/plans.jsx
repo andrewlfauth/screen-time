@@ -4,11 +4,10 @@ import CurrentPlan from '~/components/plans/CurrentPlan'
 import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
 import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
 import { createPlan, getUser } from "~/services/users.server"
-import { useLoaderData} from '@remix-run/react'
+import { useLoaderData, useActionData } from '@remix-run/react'
 
 export async function action({request}) {
-  createPlan(request)
-  return null
+  return createPlan(request)
 }
 
 export async function loader({request}) {
@@ -18,6 +17,7 @@ export async function loader({request}) {
 
 function Index() {
   const plans = useLoaderData()
+  const action = useActionData()
   const [focus, setFocus] = useState([])
   const [currentPlan, setCurrentPlan] = useState([])
   const focusOptions = [
@@ -54,8 +54,10 @@ function Index() {
   
   return (
     <div className="px-2">
-      <CurrentPlan 
+      <CurrentPlan
+        action={action}
         currentPlan={currentPlan}
+        clearPlan={() => setCurrentPlan([])}
         handleRemoveImage={(e) => 
           setCurrentPlan(currentPlan.filter(s => 
             s !== e.target.parentElement.getAttribute('data-image')))
