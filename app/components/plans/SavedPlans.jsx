@@ -7,7 +7,7 @@ function SavedPlans({plans}) {
         Saved Plans
       </h2>
       {
-        plans ? (
+        plans.length ? (
           <div className='space-y-2'>
             {plans.map((plan) => (
               <PlanLink key={plan.name} plan={plan} />
