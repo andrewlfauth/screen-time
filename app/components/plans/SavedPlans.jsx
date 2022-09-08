@@ -6,9 +6,11 @@ function SavedPlans({plans}) {
       <h2 className='text-lg items-center font-semibold mb-2'>
         Saved Plans
       </h2>
-      {plans.map((plan) => (
-        <PlanLink key={plan.name} plan={plan} />
-       ))}
+      <div className='space-y-2'>
+        {plans.map((plan) => (
+          <PlanLink key={plan.name} plan={plan} />
+        ))}
+      </div>
     </div>
   )
 }
