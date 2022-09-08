@@ -1,10 +1,11 @@
 import {useState} from 'react'
 import SavedPlans from '~/components/plans/SavedPlans'
+import FeaturedPlans from '~/components/plans/FeaturedPlans'
 import CurrentPlan from '~/components/plans/CurrentPlan'
 import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
 import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
 import { getUser } from "~/services/users.server"
-import { createPlan } from "~/services/plans.server"
+import { createPlan, getFeaturedPlans } from "~/services/plans.server"
 import { useLoaderData, useActionData } from '@remix-run/react'
 
 export async function action({request}) {
@@ -13,7 +14,8 @@ export async function action({request}) {
 
 export async function loader({request}) {
   const user = await getUser(request)
-  return user.plans
+  const featuredPlans = await getFeaturedPlans(user.username)
+  return {savedPlans: user.plans, featuredPlans}
 }
 
 function Index() {
@@ -52,7 +54,7 @@ function Index() {
     }
     return setCurrentPlan([...currentPlan, show])
   }
-  
+
   return (
     <div className="px-2 overflow-x-hidden">
       <CurrentPlan
@@ -75,8 +77,8 @@ function Index() {
           currentPlan={currentPlan}
         />
       </div>
-
-      <SavedPlans plans={plans} />
+      <SavedPlans plans={plans.savedPlans} />
+      <FeaturedPlans plans={plans.featuredPlans} />
     </div>
 
   )
