@@ -2,6 +2,7 @@ import Users from '~/models/Users'
 import shows from '~/shows.json'
 import {getUser} from './users.server'
 import {redirect} from "@remix-run/node"
+import FeaturedPlans from '~/components/plans/FeaturedPlans'
 
 export async function createPlan(request) {
   const userId = await request.headers.get("Cookie")
@@ -39,4 +40,19 @@ export async function getPlan(request, params) {
   const plan = user.plans.find(p => p.name === planName)
   const planShows = shows.filter((s) => plan.images.includes(s.image))
   return {name: plan.name, show: planShows}
+}
+
+export async function getFeaturedPlans(username) {
+  const plansArray = await Users
+    .aggregate([
+      {$match: {"plans.0": {"$exists": true}}},
+      {$match: {"username": {$ne: username}}},
+      {$project: {plans: 1, username: 1}},
+      {$sample: {size: 3}}
+    ])
+    const featuredPlans = plansArray.map(p => {
+      return {username: p.username, plan: p.plans[0]}
+    })
+  
+    return featuredPlans
 }
