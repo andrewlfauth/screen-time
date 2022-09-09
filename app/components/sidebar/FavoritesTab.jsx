@@ -11,7 +11,7 @@ function FavoritesTab({expand}) {
       >
         <span className={`${expand ? "block" : "hidden lg:block"}`}>Favorites</span>
         <FaHeart
-        className='text-[30px] text-emerald-500 hover:scale-110'
+        className='text-[30px] text-emerald-500 group-hover:scale-110'
         />
       </Link>
     </div>
