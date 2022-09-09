@@ -44,15 +44,22 @@ export async function getPlan(request, params) {
 
 export async function getFeaturedPlans(username) {
   const plansArray = await Users
-    .aggregate([
-      {$match: {"plans.0": {"$exists": true}}},
-      {$match: {"username": {$ne: username}}},
-      {$project: {plans: 1, username: 1}},
-      {$sample: {size: 3}}
-    ])
-    const featuredPlans = plansArray.map(p => {
+  .aggregate([
+    {$match: {"plans.0": {"$exists": true}}},
+    {$match: {"username": {$ne: username}}},
+    {$project: {plans: 1, username: 1}},
+    {$sample: {size: 3}}
+  ])
+  const featuredPlans = plansArray.map(p => {
       return {username: p.username, plan: p.plans[0]}
     })
-  
+    
     return featuredPlans
+}
+
+export async function getUnownedPlan(username, planName) {
+  const creator = await Users.findOne({username})
+  const plan = creator.plans.filter(p => p.name === planName)[0]
+  const planShows = shows.filter((s) => plan.images.includes(s.image))
+  return planShows
 }
