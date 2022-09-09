@@ -20,7 +20,7 @@ function PlanLink({plan, creator}) {
   useEffect(() => {
     timerRef.current = setTimeout(() => {
       setSrcIdx((srcIdx + 1) % plan.images.length)
-    }, 2000) 
+    }, 3000) 
 
     return () => clearTimeout(timerRef.current)
   }, [plan.images.length, srcIdx])
@@ -31,7 +31,7 @@ function PlanLink({plan, creator}) {
       className="bg-white flex space-x-4 rounded-md shadow p-4 block w-fit border-2 border-white hover:border-emerald-500"
     >
       <div>
-        <span className='font-bold text-lg'>{plan.name}</span>
+        <span className='font-semibold text-lg'>{plan.name}</span>
         {creator && (
           <>
             <span className='flex relative top-3'>
@@ -53,7 +53,7 @@ function PlanLink({plan, creator}) {
             key={idx}
             src={plan.images[idx]} 
             alt="" 
-            className={`${idx == srcIdx ? "opacity-100" : "opacity-0"} rounded ml-4 duration-500 absolute -left-4 w-20`} />
+            className={`${idx == srcIdx ? "opacity-100 scale-100" : "opacity-0 scale-95"} rounded ml-4 duration-500 absolute -left-4 w-20`} />
           )
         })}
       </div>
