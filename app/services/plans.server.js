@@ -51,7 +51,7 @@ export async function getFeaturedPlans(username) {
     {$sample: {size: 3}}
   ])
   const featuredPlans = plansArray.map(p => {
-      return {username: p.username, plan: p.plans[0]}
+      return {username: p.username, plan: p.plans[Math.floor(Math.random() * p.plans.length)]}
     })
     
     return featuredPlans
