@@ -28,13 +28,13 @@ function PlanLink({plan, creator}) {
   return (
     <Link
       to={creator ? `/dashboard/plans/${creator}/${plan.name}` : `/dashboard/plans/${plan.name}`}
-      className="bg-white flex space-x-4 rounded-md shadow p-4 block w-fit border-2 border-white hover:border-emerald-500"
+      className="flex p-4 space-x-4 bg-white border-2 border-white rounded-md shadow w-fit hover:border-emerald-500"
     >
       <div>
-        <span className='font-semibold text-lg'>{plan.name}</span>
+        <span className='text-lg font-semibold'>{plan.name}</span>
         {creator && (
           <>
-            <span className='flex relative top-3'>
+            <span className='relative flex top-3'>
               <RiUser3Fill className={`text-sm ${color.current}`} />
               <span 
                 className={`text-xs ml-[3px] font-semibold ${color.current}`}
@@ -46,7 +46,7 @@ function PlanLink({plan, creator}) {
         )}
       </div>
 
-      <div className='w-20 h-12 rounded relative'>
+      <div className='relative w-20 h-12 rounded'>
         {plan.images.map((img, idx) => {
           return (
             <img 

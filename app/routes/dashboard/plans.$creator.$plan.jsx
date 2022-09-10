@@ -1,6 +1,9 @@
 import {getUnownedPlan} from '~/services/plans.server'
 import {useLoaderData} from '@remix-run/react'
 import ShowCard from '~/components/ShowCard'
+import {useRef} from 'react'
+import {RiUser3Fill} from 'react-icons/ri'
+
 
 export async function loader ({params}) {
   const {creator, plan} = params
@@ -10,15 +13,25 @@ export async function loader ({params}) {
 
 function Index() {
   const data = useLoaderData()
+  let colorOptions = [
+    'text-blue-600',
+    'text-purple-600',
+    'text-orange-600',
+    'text-green-600',
+    'text-pink-600',
+    'text-sky-600',
+  ]
+  let color = useRef(colorOptions[Math.floor(Math.random() * colorOptions.length)])
+
   return (
     <div className="px-2">
-      <div className="bg-gray-100 rounded-md p-4 mt-2 lg:w-fit">
-        <h2 className='font-semibold text-lg'>{data.planName}</h2>
-        <span className='font-semibold text-sm'>
-          Created by: {" "}
-          <span className='text-base'>{data.creator}</span>
+      <div className="p-4 mt-2 bg-gray-100 rounded-md lg:w-fit">
+        <h2 className='text-xl font-medium'>{data.planName}</h2>
+        <span className={`${color.current} flex items-center font-medium text-sm`}>
+          <RiUser3Fill  className='mr-1' />
+          {data.creator}
         </span>
-        <div className='grid gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4 w-fit '>
+        <div className='grid gap-4 mt-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3 w-fit '>
           {
             data.shows.map(s => <ShowCard action="like" key={s.title} show={s} />)
           }
