@@ -17,23 +17,23 @@ function FavoriteShows({likes}) {
       </h2>
       {
         likes.length ? (
-          <div className='grid gap-2 sm:grid-cols-2 mt-4'>
+          <div className='grid gap-2 mt-4 sm:grid-cols-2'>
             {favoriteShows.map(s => 
               <ShowCard key={s.title} show={s} />
             )}
           </div>
         ) : (
-          <div className='mt-4 flex'>
+          <div className='flex mt-4'>
             <div>
               <p className='w-[250px] select-none'>
                 To save a show to favorites click underneath the show's image.
               </p>
             </div>
-            <div onClick={() => setFillHeart(!fillHeart)} className="-ml-1">
+            <div onClick={() => setFillHeart(!fillHeart)} className="ml-4">
               {fillHeart ? 
-                <FaHeart className='text-2xl cursor-pointer -ml-4 text-gray-900' />
+                <FaHeart className='-ml-4 text-2xl text-gray-900 cursor-pointer' />
                 :
-                <FaRegHeart className='text-2xl cursor-pointer -ml-4 text-gray-900' />
+                <FaRegHeart className='-ml-4 text-2xl text-gray-900 cursor-pointer' />
               }
             </div>
           </div>

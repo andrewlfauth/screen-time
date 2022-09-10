@@ -57,16 +57,16 @@ function Index() {
 
   return (
     <div className="px-2 overflow-x-hidden">
-      <CurrentPlan
-        action={action}
-        currentPlan={currentPlan}
-        clearPlan={() => setCurrentPlan([])}
-        handleRemoveImage={(e) => 
-          setCurrentPlan(currentPlan.filter(s => 
-            s !== e.target.parentElement.getAttribute('data-image')))
-        } 
-      />
       <div className="bg-gray-100 rounded-md p-4 mt-2 md:max-w-[500px]">
+        <CurrentPlan
+          action={action}
+          currentPlan={currentPlan}
+          clearPlan={() => setCurrentPlan([])}
+          handleRemoveImage={(e) => 
+            setCurrentPlan(currentPlan.filter(s => 
+              s !== e.target.parentElement.getAttribute('data-image')))
+          } 
+        />
         <LearningGoalsSelect 
           options={focusOptions}
           onChange={(e) => setFocus(e)}

@@ -5,12 +5,12 @@ function LearningGoalsSelect({options, onChange}) {
     <>
       <label 
         htmlFor="focus" 
-        className='text-lg font-semibold mb-2 block'
+        className='block mt-3 mb-1 text-sm font-semibold'
       >
-        Learning Goals
+        What is your child working on?
       </label>
       <Select
-        placeholder='e.g. "Empathy"'
+        placeholder='e.g. "Literacy"'
         className="w-fit min-w-[200px]" 
         name="focus"
         isMulti

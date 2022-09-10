@@ -1,8 +1,8 @@
 import CurrentPlanImage from './CurrentPlanImage'
 import {useState, useRef, useEffect} from 'react'
-import {Form} from '@remix-run/react'
 import Flash from '~/components/Flash'
 import NamePlanForm from './NamePlanForm'
+import {AiOutlinePlusCircle} from 'react-icons/ai'
 
 function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
   const [done, setDone] = useState(false)
@@ -16,20 +16,20 @@ useEffect(() => {
 }, [action])
 
   return (
-    <div className="bg-gray-100 p-4 rounded-md min-h-[125px] w-[500px]">
-      <h2 className='text-lg items-end flex font-semibold mb-2'>
+    <div>
+      <h2 className='flex items-end mb-2 text-lg font-semibold'>
         Create Plan
         {currentPlan.length ? (
         <>
             <button 
             onClick={() => setDone(true)}
-            className='font-semibold text-sm px-4 py-1 text-white bg-emerald-500 text-center ml-4 mr-2 rounded-full shadow'
+            className='px-4 py-1 ml-4 mr-2 text-sm font-semibold text-center text-white rounded-full shadow bg-emerald-500'
           >
             Done
           </button>
           <button 
             onClick={clearPlan}
-            className='font-semibold text-sm py-1 rounded-full shadow px-4 text-center bg-gray-50 text-neutral-500'
+            className='px-4 py-1 text-sm font-semibold text-center rounded-full shadow bg-gray-50 text-neutral-500'
           >
             Clear
           </button>
@@ -38,13 +38,13 @@ useEffect(() => {
 
         {action?.error && (
           <Flash duration={5000}>
-            <span className='text-base ml-1 text-red-500'
+            <span className='ml-1 text-base text-red-500'
             >{"- "}{action.error}</span>
           </Flash>
         )}
         {action?.success && (
           <Flash duration={5000}>
-            <span className='text-base ml-1 text-emerald-500'
+            <span className='ml-1 text-base text-emerald-500'
             >{"- "}Success!</span>
           </Flash>
         )}
@@ -54,7 +54,13 @@ useEffect(() => {
 
       {
         !currentPlan.length ? (
-          <p className="max-w-md">Select the learning goals that you want your child to focus on and we'll match you with shows with the same focus.</p>
+          <p className="max-w-md text-xs">
+            Discover the shows that fit your child's needs.<br/>
+            <span className='flex items-end'>
+              To add a show click
+              <AiOutlinePlusCircle className='ml-1 text-lg' />
+            </span>
+          </p>
         ) : (
           <div className='flex flex-col'>
           <div className="flex flex-wrap items-center">
