@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': '"Poppins", sans-serif'
+        'inter': '"Inter", sans-serif'
       },
       animation: {
         'spin-once': 'spin 1s ease-in-out reverse',
