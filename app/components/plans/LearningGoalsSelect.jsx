@@ -7,7 +7,7 @@ function LearningGoalsSelect({options, onChange}) {
         htmlFor="focus" 
         className='block mt-3 mb-1 text-sm font-semibold'
       >
-        What is your child working on?
+        What is your child learning?
       </label>
       <Select
         placeholder='e.g. "Literacy"'
