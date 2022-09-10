@@ -6,7 +6,7 @@ const SelectFilter = forwardRef(function SelectFilter({name, options, onChange},
     <>
       <label 
         htmlFor={name}
-        className='text-xl font-bold mb-2 block'
+        className='block mb-2 text-xl font-bold'
       >
         {name[0].toUpperCase() + name.substring(1)}
       </label>

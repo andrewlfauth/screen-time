@@ -10,7 +10,8 @@ export async function action({request, params}) {
 }
 
 export async function loader({request, params}) {
-  return getPlan(request, params)
+  const plan = await getPlan(request, params)
+  return plan
 }
 
 function Index() {
@@ -19,14 +20,14 @@ function Index() {
 
   return (
     <div className="px-2">
-      <div className="bg-gray-100 rounded-md p-4 mt-2 lg:w-fit">
-        <div className='flex justify-between relative'>
-          <h2 className='font-semibold text-lg'>{plan.name}</h2>
+      <div className="p-4 mt-2 bg-gray-100 rounded-md lg:w-fit">
+        <div className='relative flex justify-between'>
+          <h2 className='text-xl font-medium'>{plan.name}</h2>
           <button 
-            className='rounded bg-neutral-250 hover:bg-white shadow p-2'
+            className='p-2 rounded shadow bg-neutral-250 hover:bg-white'
             onClick={() => setConfirmDelete(true)}
           >
-            <BsTrashFill className='text-neutral-500 text-xl' />
+            <BsTrashFill className='text-xl text-neutral-500' />
           </button>
           {confirmDelete && 
             <DeletePlanWarning 
@@ -36,7 +37,7 @@ function Index() {
             />
           }
         </div>
-        <div className='grid gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-4 w-fit '>
+        <div className='grid gap-4 mt-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3 w-fit '>
           {
             plan.show.map(s => <ShowCard action="like" key={s.title} show={s} />)
           }
