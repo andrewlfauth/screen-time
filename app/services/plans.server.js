@@ -38,6 +38,7 @@ export async function getPlan(request, params) {
   const planName = await params.plan
   const user = await getUser(request)
   const plan = user.plans.find(p => p.name === planName)
+  if (!plan) return redirect('/dashboard')
   const planShows = shows.filter((s) => plan.images.includes(s.image))
   return {name: plan.name, show: planShows}
 }
