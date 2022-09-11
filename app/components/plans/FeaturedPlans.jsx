@@ -2,7 +2,7 @@ import PlanLink from "./PlanLink"
 
 function FeaturedPlans({plans}) {
   return (
-    <div className="bg-gray-100 rounded-md p-4 mt-2 md:min-w-[500px]">
+    <div className="bg-gray-100 rounded-md p-4 md:min-w-[500px]">
       <h2 className="text-lg font-semibold mb-2">
         Featured Plans
       </h2>
