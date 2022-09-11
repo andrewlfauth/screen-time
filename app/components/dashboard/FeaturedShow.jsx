@@ -11,12 +11,13 @@ function FeaturedShow() {
       </h2>
       <ShowCard show={feature} likeButton={false} />
       <p className='max-w-xs text-sm -medium mt-2'>
-        Teaches kids about
+        {/* Teaches kids about
         {feature.focus.map((f,i) => 
           <span className='font-semibold' key={f}>
             {i === feature.focus.length - 1 ? ` and ${f}.` : ` ${f},`}
           </span>
-        )}
+        )} */}
+        {feature.description}
       </p>
     </div>
   )

@@ -1,42 +1,37 @@
-import { RiArrowUpDownFill } from 'react-icons/ri'
 import { useState } from 'react'
 import {FaBaby} from 'react-icons/fa'
 import LikeButton from './LikeButton'
 import AddButton from './AddButton'
+import ShowInfo from './ShowInfo'
+import {BiInfoCircle} from 'react-icons/bi'
 
 
 function ShowCard({show, action = "like", onClick, added}) {
-  const [showFocus, setShowFocus] = useState(false)
+  const [showInfo, setShowInfo] = useState(false)
   
   return (
     <div className="flex flex-col shadow rounded-t-md max-w-[300px] md:w-auto">
       <div className='relative max-w-sm'>
-        {showFocus && 
-          <div className="h-full realtive w-full text-white text-center text-xl font-bold bg-purple-900 bg-opacity-80 py-2 absolute rounded-t-md overflow-y-auto">
-            {show.focus.map(f => <h2 key={f}>{f}</h2> )}
-          </div>
-        }
+        <ShowInfo toggle={showInfo} show={show} />
         <img src={show.image} alt={show.title} className='w-full aspect-auto rounded-t-md' />
       </div>
 
-      <div className="bg-gray-800 flex items-center justify-between rounded-b-md shadow px-2 py-1">
+      <div className="bg-blue-900 flex items-center justify-between rounded-b-md shadow px-2 py-1">
         <button
           className='relative group' 
-          onClick={() => setShowFocus(!showFocus)}
+          onClick={() => setShowInfo(!showInfo)}
         >
-          <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-2 text-sm">
+          <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-2 text-sm pointer-events-none">
             <div className="w-2 h-2 bg-white absolute left-4 rotate-45 -bottom-[4px]"></div>
-              Focus
+              Info
           </div>
-          <RiArrowUpDownFill 
-            className="text-white text-2xl" 
-          />
+          <BiInfoCircle className="text-white text-2xl" />
         </button>
 
         <h3 
           className='text-white relative flex group items-center cursor-help font-semibold tracking-tight'
         >
-            <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-3 text-sm">
+            <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-3 text-sm pointer-events-none">
               <div className="w-2 h-2 bg-white absolute left-0 right-0 mx-auto rotate-45 -bottom-[4px]"></div>
               Ages
             </div>

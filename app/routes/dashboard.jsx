@@ -3,7 +3,6 @@ import { useLoaderData, Outlet} from '@remix-run/react'
 import {atom, useAtom} from 'jotai'
 import { redirect } from '@remix-run/node'
 import Header from '~/components/dashboard/Header'
-import FeaturedShow from '~/components/dashboard/FeaturedShow'
 
 export const userAtom = atom("")
 
@@ -25,7 +24,6 @@ function Index() {
       <div className='flex-1 ml-[75px] lg:ml-[203px]'>
         <Header />
         <Outlet />
-        <FeaturedShow />
       </div>
     </div>
   )
