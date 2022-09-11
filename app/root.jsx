@@ -51,7 +51,9 @@ export default function App() {
       <body className='font-inter'>
         <Navbar toggle={() => setDarkMode(!darkMode)} />
         {showSidebar && <Sidebar />}
-        <Outlet />
+        <div className='h-screen bg-blue-50'>
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
