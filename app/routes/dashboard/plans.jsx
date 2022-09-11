@@ -56,29 +56,40 @@ function Index() {
   }
 
   return (
-    <div className="px-2 overflow-x-hidden">
-      <div className="bg-gray-100 rounded-md p-4 mt-2 md:max-w-[500px]">
-        <CurrentPlan
-          action={action}
-          currentPlan={currentPlan}
-          clearPlan={() => setCurrentPlan([])}
-          handleRemoveImage={(e) => 
-            setCurrentPlan(currentPlan.filter(s => 
-              s !== e.target.parentElement.getAttribute('data-image')))
-          } 
-        />
-        <LearningGoalsSelect 
-          options={focusOptions}
-          onChange={(e) => setFocus(e)}
-        />
-        <LearningGoalsDisplay 
-          focus={focus}
-          onClick={updatePlan}
-          currentPlan={currentPlan}
-        />
+    <div className="p-4 bg-blue-50">
+      <div className='w-fit'>
+        <div className="flex justify-between w-full p-4 bg-white rounded-md shadow">
+          <div>
+            <CurrentPlan
+              action={action}
+              currentPlan={currentPlan}
+              clearPlan={() => setCurrentPlan([])}
+              handleRemoveImage={(e) => 
+                setCurrentPlan(currentPlan.filter(s => 
+                  s !== e.target.parentElement.getAttribute('data-image')))
+              } 
+            />
+            <LearningGoalsSelect 
+              options={focusOptions}
+              onChange={(e) => setFocus(e)}
+            />
+            <LearningGoalsDisplay 
+              focus={focus}
+              onClick={updatePlan}
+              currentPlan={currentPlan}
+            />
+          </div>
+          {!focus.length && !currentPlan.length && (
+            <div className='items-end hidden sm:flex'>
+              <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_250/v1662930914/Screen%20Time/Group_3_cqbghw.png" alt="rabbit and bear" />
+            </div>
+          )}
+        </div>
+        <div className='flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
+          <SavedPlans plans={plans.savedPlans} />
+          <FeaturedPlans plans={plans.featuredPlans} />
+        </div>
       </div>
-      <SavedPlans plans={plans.savedPlans} />
-      <FeaturedPlans plans={plans.featuredPlans} />
     </div>
 
   )

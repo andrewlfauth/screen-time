@@ -79,7 +79,7 @@ function ShowsFilter() {
   }
  
   return (
-    <div className='p-4 rounded-md bg-gray-100 min-w-full md:min-w-[650px]'>
+    <div className='w-full p-4 bg-white rounded-md shadow lg:w-fit'>
       <h2 className='text-lg font-semibold'>
         Find shows by
       </h2>
@@ -104,7 +104,7 @@ function ShowsFilter() {
         <div className='flex mt-4 space-x-4'>
           <button
             onClick={handleShowAll}
-            className={`${showAll ? "bg-purple-400" : "bg-white"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] w-fit px-5 block sm:self-end font-semibold text-neutral-800`}
+            className={`${showAll ? "bg-blue-900 text-white" : "bg-white text-blue-900"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] w-fit px-5 block sm:self-end font-semibold`}
           >
             All
           </button>

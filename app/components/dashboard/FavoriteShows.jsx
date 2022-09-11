@@ -8,10 +8,10 @@ function FavoriteShows({likes}) {
   const [fillHeart, setFillHeart] = useState(false)
 
   return (
-    <div className='p-4 bg-gray-100 rounded-md w-full md:w-fit sm:w-auto max-w-[600px]'>
+    <div className='w-full p-4 bg-white rounded-md shadow lg:w-fit'>
       <h2 className='text-lg font-semibold select-none'>
         {likes.length ? 
-          "Your Favorites" : 
+          "My Favorites" : 
           `Currently no favorites ${fillHeart ? '😸' : '😿'}`
         }
       </h2>

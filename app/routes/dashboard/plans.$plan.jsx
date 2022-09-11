@@ -19,12 +19,12 @@ function Index() {
   const [confirmDelete, setConfirmDelete] = useState(false)
 
   return (
-    <div className="px-2">
-      <div className="p-4 mt-2 bg-gray-100 rounded-md lg:w-fit">
+    <div className="p-4 bg-blue-50">
+      <div className="p-4 bg-white rounded-md shadow lg:w-fit">
         <div className='relative flex justify-between'>
           <h2 className='text-xl font-medium'>{plan.name}</h2>
           <button 
-            className='p-2 rounded shadow bg-neutral-250 hover:bg-white'
+            className='p-2 bg-white rounded shadow hover:bg-blue-300'
             onClick={() => setConfirmDelete(true)}
           >
             <BsTrashFill className='text-xl text-neutral-500' />

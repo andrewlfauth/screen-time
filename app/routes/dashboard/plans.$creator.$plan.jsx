@@ -24,8 +24,8 @@ function Index() {
   let color = useRef(colorOptions[Math.floor(Math.random() * colorOptions.length)])
 
   return (
-    <div className="px-2">
-      <div className="p-4 mt-2 bg-gray-100 rounded-md lg:w-fit">
+    <div className="p-4 bg-blue-50">
+      <div className="p-4 bg-white rounded-md shadow lg:w-fit">
         <h2 className='text-xl font-medium'>{data.planName}</h2>
         <span className={`${color.current} flex items-center font-medium text-sm`}>
           <RiUser3Fill  className='mr-1' />

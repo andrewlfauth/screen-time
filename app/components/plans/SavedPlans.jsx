@@ -2,9 +2,9 @@ import PlanLink from './PlanLink'
 
 function SavedPlans({plans}) {
   return (
-    <div className="bg-gray-100 rounded-md p-4 h-fit w-fit">
-      <h2 className='text-lg font-semibold mb-2'>
-        Your Plans
+    <div className="p-4 bg-white rounded-md shadow h-fit w-fit">
+      <h2 className='mb-2 text-lg font-semibold'>
+       🌱 Your Plans
       </h2>
       {
         plans.length ? (

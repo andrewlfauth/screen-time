@@ -12,7 +12,7 @@ function Index() {
   const likes = useLoaderData()
 
   return (
-    <div className="px-2">
+    <div className="p-4 bg-blue-50">
       <FavoriteShows likes={likes} />
     </div>
   )

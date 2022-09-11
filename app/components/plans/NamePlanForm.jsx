@@ -8,7 +8,7 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
         <input type="hidden" name="plan" value={currentPlan} />
         <label 
           htmlFor="planName"
-          className='font-semibold -top-[12px] text-purple-900 absolute text-sm'
+          className='font-semibold -top-[12px] text-blue-900 absolute text-sm'
         >
             Name your plan
           </label>
@@ -16,18 +16,18 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
           ref={ref}
           type="text" name="planName" required
           placeholder='e.g. "Manners & Curiosity"' 
-          className='outline-none shadow-inner placeholder:text-sm py-2 px-2 rounded'
+          className='px-2 py-2 border rounded outline-blue-900 placeholder:text-sm'
         />
       </div>
       <div className='space-x-2 mt-[10px] ml-2'>
         <button 
           type="submit"
-          className='px-4 rounded h-full font-semibold text-white bg-emerald-500'
+          className='h-full px-4 font-semibold text-white bg-blue-900 rounded'
         >
           Save
         </button>
         <button
-          className='bg-gray-200 h-full text-neutral-500 font-semibold px-4 rounded'
+          className='h-full px-4 font-semibold rounded bg-blue-50 text-neutral-500'
           onClick={goBack}
         >
           Back

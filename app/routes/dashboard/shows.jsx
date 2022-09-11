@@ -21,10 +21,10 @@ function Index() {
   setUser(userData)
 
   return (
-    <div className="px-2 flex flex-col lg:space-x-4 items-start justify-between">
-      
-      <ShowsFilter />
-      {/* <FeaturedShow /> */}
+    <div className="p-4 bg-blue-50">
+        
+        <ShowsFilter />
+        {/* <FeaturedShow /> */}
     </div>
   )
 }

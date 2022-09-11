@@ -18,18 +18,18 @@ useEffect(() => {
   return (
     <div>
       <h2 className='flex items-end mb-2 text-lg font-semibold'>
-        Create Plan
+      🆕 Create Plan
         {currentPlan.length ? (
         <>
             <button 
             onClick={() => setDone(true)}
-            className='px-4 py-1 ml-4 mr-2 text-sm font-semibold text-center text-white rounded-full shadow bg-emerald-500'
+            className='px-4 py-1 ml-4 mr-2 text-sm font-semibold text-center text-white bg-blue-900 rounded-full shadow'
           >
             Done
           </button>
           <button 
             onClick={clearPlan}
-            className='px-4 py-1 text-sm font-semibold text-center rounded-full shadow bg-gray-50 text-neutral-500'
+            className='px-4 py-1 text-sm font-semibold text-center rounded-full shadow bg-blue-50 text-neutral-500'
           >
             Clear
           </button>
@@ -44,7 +44,7 @@ useEffect(() => {
         )}
         {action?.success && (
           <Flash duration={5000}>
-            <span className='ml-1 text-base text-emerald-500'
+            <span className='ml-1 text-base text-blue-900'
             >{"- "}Success!</span>
           </Flash>
         )}
