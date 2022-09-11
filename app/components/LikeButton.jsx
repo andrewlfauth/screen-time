@@ -25,15 +25,15 @@ function LikeButton({show}) {
         onClick={() => setLike(!like)} 
         className='relative group'
       >
-        <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-10 text-sm">
+        <div className="absolute z-10 w-24 py-1 text-sm font-bold text-center text-black bg-white rounded-full opacity-0 -top-12 group-hover:opacity-100 -left-10">
           <div className="w-2 h-2 bg-white absolute left-0 right-0 mx-auto rotate-45 -bottom-[4px]"></div>
           {user ? like ? "Unlike" : "Like" : "Login to like"}
         </div>
         {
           like ?
-            <FaHeart className="text-pink-300 hover:scale-110 text-xl" />
+            <FaHeart className="text-xl text-pink-300 hover:scale-110" />
           :  
-            <FaRegHeart className="text-white text-xl hover:scale-110 duration-100" />
+            <FaRegHeart className="text-xl text-white duration-100 hover:scale-110" />
         }
       </button>
     </fetcher.Form>

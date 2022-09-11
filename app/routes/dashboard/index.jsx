@@ -17,11 +17,11 @@ function Index() {
   const data = useLoaderData()
 
   return (
-    <div className='px-2 py-1 flex flex-wrap space-x-2'>
-      <div className='flex flex-col relative'>
+    <div className='flex flex-wrap px-2 py-1 space-x-2'>
+      <div className='relative flex flex-col'>
         <SavedPlans plans={data.user.plans} />
         <Link
-          className='absolute top-2 flex items-center text-blue-900 -mt-1 hover:scale-105 duration-100 block font-semibold text-xl right-2 w-fit' 
+          className='absolute flex items-center -mt-1 text-xl font-semibold text-blue-900 duration-100 top-2 hover:scale-105 right-2 w-fit' 
           to='/dashboard/plans'
         >
           <AiOutlinePlusCircle className='text-3xl' />
