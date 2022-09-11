@@ -49,7 +49,7 @@ export async function getFeaturedPlans(username) {
     {$match: {"plans.0": {"$exists": true}}},
     {$match: {"username": {$ne: username}}},
     {$project: {plans: 1, username: 1}},
-    {$sample: {size: 3}}
+    {$sample: {size: 2}}
   ])
   const featuredPlans = plansArray.map(p => {
       return {username: p.username, plan: p.plans[Math.floor(Math.random() * p.plans.length)]}
