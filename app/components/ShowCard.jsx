@@ -23,7 +23,7 @@ function ShowCard({show, action = "like", onClick, added}) {
         >
           <div className="absolute opacity-0 -top-12 group-hover:opacity-100 bg-white text-center text-black font-bold py-1 w-24 rounded-full -left-2 text-sm pointer-events-none">
             <div className="w-2 h-2 bg-white absolute left-4 rotate-45 -bottom-[4px]"></div>
-              Info
+              {showInfo ? "Close" : "Info"}
           </div>
           <BiInfoCircle className="text-white text-2xl" />
         </button>

@@ -31,7 +31,7 @@ function LikeButton({show}) {
         </div>
         {
           like ?
-            <FaHeart className="text-pink-300 text-xl" />
+            <FaHeart className="text-pink-300 hover:scale-110 text-xl" />
           :  
             <FaRegHeart className="text-white text-xl hover:scale-110 duration-100" />
         }

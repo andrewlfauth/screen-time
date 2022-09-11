@@ -4,7 +4,7 @@ import {useState} from 'react'
 function ShowInfo({show, toggle}) {
   const [showDescription, setShowDescription] = useState(false)
 
-  return true ? (
+  return toggle ? (
     <div className="h-full select-none realtive w-full text-white bg-blue-900 bg-opacity-90 py-2 absolute rounded-t-md overflow-y-auto">
       <div 
         className='p-1 cursor-pointer z-10 absolute top-1 left-1'
