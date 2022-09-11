@@ -14,7 +14,7 @@ export default function Index() {
               Make The Most Of Your Child's
               <span className='text-blue-900'>{" "}Screen Time</span>
             </h1>
-          <p className='max-w-xl text-sm md:text-[16px] mx-auto text-center mt-2 lg:mt-4 dark:text-gray-300 leading-6'>Screen time doesn't have to be a waste of time. Nurture your child's learning by finding the television shows that fit your child's need.</p>
+          <p className='max-w-xl text-sm md:text-[16px] mx-auto text-center mt-2 lg:mt-4 dark:text-gray-300 leading-6'>Screen time doesn't have to be a waste of time. Nurture your child's learning by finding the television shows that fit their needs.</p>
           <div className='flex flex-col w-full mt-8 space-y-4 md:mt-12 lg:w-auto lg:space-y-0 lg:space-x-4 lg:flex-row'>
             <Link 
               to='/get-started'
