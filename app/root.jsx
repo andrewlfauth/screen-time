@@ -1,7 +1,9 @@
 import tailwindURL from './styles/tailwind'
 import useDarkMode from './components/hooks/useDarkMode';
 import {connect} from './services/db.server'
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
+import Sidebar from './components/sidebar/Sidebar'
+import { useLocation } from '@remix-run/react';
 
 const {
   Links,
@@ -31,6 +33,11 @@ export async function loader() {
 
 export default function App() {
   const {darkMode, setDarkMode} = useDarkMode()
+  const path = useLocation().pathname
+  let showSidebar = 
+    path !== "/login" &&
+    path !== '/get-started' &&
+    path !== '/'
 
   return (
     <html lang="en" className={`${darkMode ? 'dark' : ''}`}>
@@ -43,6 +50,7 @@ export default function App() {
       </head>
       <body className='font-inter'>
         <Navbar toggle={() => setDarkMode(!darkMode)} />
+        {showSidebar && <Sidebar />}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
