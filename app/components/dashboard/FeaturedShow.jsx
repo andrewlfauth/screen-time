@@ -4,8 +4,8 @@ import ShowCard from '../ShowCard'
 function FeaturedShow() {
   const feature = shows[10]
   return (
-    <div className='rounded-md bg-gray-100 p-4 w-fit'>
-      <h2 className='text-lg font-semibold mb-2'>
+    <div className='p-4 bg-white rounded-md shadow w-fit'>
+      <h2 className='mb-2 text-lg font-semibold'>
         🍿 Featured Show:
         <span className='text-xl text-blue-900'>{" " + feature.title}</span>
       </h2>
