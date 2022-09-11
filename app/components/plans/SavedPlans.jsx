@@ -4,7 +4,7 @@ function SavedPlans({plans}) {
   return (
     <div className="bg-gray-100 rounded-md p-4 mt-2 w-fit">
       <h2 className='text-lg font-semibold mb-2'>
-        Saved Plans
+        Your Plans
       </h2>
       {
         plans.length ? (
