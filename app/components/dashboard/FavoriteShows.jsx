@@ -29,7 +29,7 @@ function FavoriteShows({likes}) {
                 To save a show to favorites click underneath the show's image.
               </p>
             </div>
-            <div onClick={() => setFillHeart(!fillHeart)} className="ml-4">
+            <div onClick={() => setFillHeart(!fillHeart)} className="-ml-1">
               {fillHeart ? 
                 <FaHeart className='-ml-4 text-2xl text-gray-900 cursor-pointer' />
                 :
