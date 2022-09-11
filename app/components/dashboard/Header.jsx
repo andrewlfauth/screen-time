@@ -1,25 +1,19 @@
 import {useLocation, Link} from '@remix-run/react'
 
 function Header() {
-  let pathArr = useLocation().pathname.split('/').filter(p => p)
-  if (pathArr.length === 4) pathArr = pathArr.splice(3,1)
+  let pathArray = useLocation().pathname.split('/')
+  let featuredPlan = pathArray.length === 5
+  let ownedPlan = pathArray.length === 4
+  let text = 
+    !featuredPlan ? 
+      ownedPlan ? "My Plan" : 
+      pathArray[pathArray.length - 1].replaceAll('%20', " ").charAt(0).toUpperCase() + pathArray[pathArray.length - 1].replaceAll('%20', " ").slice(1) : "Featured Plan"
+
 
   return (
-    <header className='pb-6 mr-20'>
-        <h1 className="flex flex-wrap items-center justify-center text-lg font-semibold text-center select-none md:text-xl lg:text-2xl">
-          {pathArr.map((s,i) => (
-            i === pathArr.length - 1 ? 
-              <span key={i} className='text-xl text-emerald-700 md:text-2xl lg:text-3xl whitespace-nowrap'>{s.replaceAll('%20', " ")}</span> :
-              <div key={i} className="flex">
-                <Link
-                  to={i === 0 ? '/dashboard' : `/dashboard/${s}`} 
-                  className='text-gray-500 hover:underline'
-                >
-                  {s}
-                </Link> 
-                <span className='text-purple-900 mx-[5px]'>{`>`}</span>
-              </div>
-          ))}
+    <header className='p-4 mr-20'>
+        <h1 className="flex flex-wrap text-lg font-semibold text-center select-none md:text-xl lg:text-2xl">
+          {text}
         </h1>
       </header>
   )
