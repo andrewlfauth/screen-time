@@ -7,9 +7,6 @@ module.exports = {
       fontFamily: {
         'inter': '"Inter", sans-serif'
       },
-      animation: {
-        'spin-once': 'spin 1s ease-in-out reverse',
-      },
     },
   },
   plugins: [],

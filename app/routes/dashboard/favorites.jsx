@@ -1,4 +1,4 @@
-import FavoriteShows from "../../components/dashboard/FavoriteShows"
+import Favorited from "../../components/dashboard/Favorited"
 import {getUser} from "../../services/users.server"
 import {useLoaderData} from '@remix-run/react'
 
@@ -13,7 +13,7 @@ function Index() {
 
   return (
     <div className="p-4 bg-blue-50">
-      <FavoriteShows likes={likes} />
+      <Favorited likes={likes} />
     </div>
   )
 }
