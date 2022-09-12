@@ -3,7 +3,8 @@ import shows from '~/shows.json'
 import ShowCard from '../ShowCard'
 import SelectFilter from './SelectFilter'
 
-function ShowsFilter() {
+
+function ShowSearch() {
   const [ages, setAges] = useState([])
   const [focus, setFocus] = useState([])
   const [showAll, setShowAll] = useState(false)
@@ -79,38 +80,45 @@ function ShowsFilter() {
   }
  
   return (
-    <div className='w-full p-4 bg-white rounded-md shadow lg:w-fit'>
-      <h2 className='text-lg font-semibold'>
-        Find shows by
-      </h2>
-      <div className='flex flex-col mt-2 sm:flex-row sm:space-x-4'>
-        <div className='min-w-[100px]'>
-          <SelectFilter
-            name="age"
-            ref={ageInputRef}
-            options={ageOptions} 
-            onChange={updateAges} 
-          />
+    <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 lg:w-fit'>
+      <div className='flex justify between'>
+        <div className='max-w-md'>
+          <h1 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
+            Discover the shows that fit your child's needs
+          </h1>
+          <h2 className='text-xl font-semibold mt-8'>
+            Search by
+          </h2>
+          <div className='flex flex-col mt-2 sm:flex-row sm:space-x-4'>
+              <SelectFilter
+                name="focus"
+                ref={focusInputRef}
+                options={focusOptions} 
+                onChange={updateFocus} 
+                className="min-w-[200px]"
+              />  
+              <SelectFilter
+                name="age"
+                ref={ageInputRef}
+                options={ageOptions} 
+                onChange={updateAges} 
+                className="min-w-[100px]"
+              />
+              <button
+              onClick={handleShowAll}
+              className={`${showAll ? "bg-blue-900 text-white" : "bg-white text-blue-900"} rounded border-neutral-500 border-opacity-40 duration-100 border h-[38px] w-fit px-5 block sm:self-end font-semibold`}
+            >
+              All
+            </button>
+          </div>
         </div>
-        <div className='min-w-[200px]'>
-          <SelectFilter
-            name="focus"
-            ref={focusInputRef}
-            options={focusOptions} 
-            onChange={updateFocus} 
+        <div className='flex items-end -mb-2'>
+          <img 
+            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663012532/Screen%20Time/image_13_1_nycrjx.png" 
+            alt="bear sitting"
           />
-        </div>
-
-        <div className='flex mt-4 space-x-4'>
-          <button
-            onClick={handleShowAll}
-            className={`${showAll ? "bg-blue-900 text-white" : "bg-white text-blue-900"} rounded border-neutral-500 border-opacity-40 duration-300 border h-[38px] w-fit px-5 block sm:self-end font-semibold`}
-          >
-            All
-          </button>
         </div>
       </div>
-
       <div className='grid gap-2 mt-4 lg:gap-4 sm:grid-cols-2'>
         {
           !showAll && (ages?.length || focus?.length) ? 
@@ -129,4 +137,4 @@ function ShowsFilter() {
   )
 }
 
-export default ShowsFilter
+export default ShowSearch

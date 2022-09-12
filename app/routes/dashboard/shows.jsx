@@ -1,5 +1,4 @@
-import ShowsFilter from "~/components/dashboard/ShowsFilter"
-import FeaturedShow from '~/components/dashboard/FeaturedShow'
+import ShowSearch from '~/components/dashboard/ShowSearch'
 import {handleLike, getUser} from '../../services/users.server'
 import {useLoaderData} from '@remix-run/react'
 import { userAtom } from "../dashboard"
@@ -22,9 +21,7 @@ function Index() {
 
   return (
     <div className="p-4 bg-blue-50">
-        
-        <ShowsFilter />
-        {/* <FeaturedShow /> */}
+      <ShowSearch />        
     </div>
   )
 }
