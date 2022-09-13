@@ -7,7 +7,7 @@ function AddButton({onClick, show, added}) {
       className='relative group'
       onClick={onClick}
     >
-      <div className="absolute opacity-0 -top-12 group-hover:opacity-100 z-10 bg-white text-center text-black font-bold py-1 w-24 rounded-full -right-10 text-sm pointer-events-none">
+      <div className="absolute opacity-0 group-hover:opacity-100 group-hover:scale-100 duration-100 delay-200 scale-50 -top-12 z-10 bg-white text-center text-black font-bold py-1 w-24 rounded-full -right-10 text-sm pointer-events-none shadow">
         <div className="w-2 h-2 bg-white absolute left-0 right-0 mx-auto rotate-45 -bottom-[4px]"></div>
         {added ? "Remove" : "Add"}
       </div>
