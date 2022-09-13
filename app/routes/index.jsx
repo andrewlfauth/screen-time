@@ -24,7 +24,7 @@ export default function Index() {
             </Link>
             <Link 
               to='/login'
-              className='block w-full py-2 mx-auto text-lg font-semibold text-center text-blue-900 duration-100 border-4 border-blue-800 rounded-md hover:skew-y-1 md:w-2/3 lg:mx-0 lg:w-44'
+              className='block w-full py-2 mx-auto text-lg font-semibold text-center duration-100 border-4 border-black rounded-md hover:skew-y-1 md:w-2/3 lg:mx-0 lg:w-44'
             >
               Login
             </Link>

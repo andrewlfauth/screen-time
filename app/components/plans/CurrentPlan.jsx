@@ -20,7 +20,7 @@ function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
   }, [action])
 
   return (
-    <div className="p-2 rounded-md border shadow-inner">
+    <div className="p-2 rounded-md border-2 border-gray-200 shadow-inner">
       <div className='mb-2'>
         <button 
           onClick={() => setDone(true)}
