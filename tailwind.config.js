@@ -7,6 +7,17 @@ module.exports = {
       fontFamily: {
         'inter': '"Inter", sans-serif'
       },
+      animation: {
+        wiggle: 'wiggle 3.5s ease-out infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%': { opacity: 0 },
+          '15%': { transform: 'translateY(-40px)', opacity: 1 },
+          '85%': { transform: 'translateY(-40px)', opacity: 1 },
+          '100%': { transform: 'translateY(-40px)', opacity: 0 },
+        }
+      },
     },
   },
   plugins: [],
