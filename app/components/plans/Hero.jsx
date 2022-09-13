@@ -31,8 +31,8 @@ function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChan
           />
         </div>
       </div>
-        <div className='select-none'>
-          <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_225/v1663024120/Screen%20Time/image_49_imj1iq.png" alt="fox" />
+        <div className='select-none hidden sm:block'>
+          <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_200/v1663024120/Screen%20Time/image_49_imj1iq.png" alt="fox" />
         </div>
     </div>
   )

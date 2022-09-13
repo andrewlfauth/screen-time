@@ -58,7 +58,7 @@ function Index() {
 
   return (
     <div className="p-4 bg-blue-50">
-      <div className='w-fit'>
+      <div className='lg:w-fit'>
         <Hero 
           focusOptions={focusOptions}
           onClick={updatePlan}

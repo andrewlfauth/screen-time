@@ -23,7 +23,9 @@ function Index() {
     <div className='flex py-6'>
       <div className='flex-1 ml-[75px] lg:ml-[203px]'>
         <Header />
-        <Outlet />
+        <div className='flex justify-center lg:justify-start'>
+          <Outlet />
+        </div>
       </div>
     </div>
   )

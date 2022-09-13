@@ -80,7 +80,7 @@ function ShowSearch() {
   }
  
   return (
-    <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 lg:w-fit'>
+    <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 md:w-fit'>
       <div className='flex justify between'>
         <div className='max-w-md'>
           <h1 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>

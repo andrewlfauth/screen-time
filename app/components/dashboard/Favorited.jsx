@@ -9,7 +9,7 @@ function Favorited({likes}) {
   const [clicked, setClicked] = useState(false)
 
   return (
-    <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 lg:w-fit'>
+    <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 md:w-fit'>
       <div className='flex justify between'>
         <div className='max-w-md'>
           <h1 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
@@ -20,7 +20,7 @@ function Favorited({likes}) {
               When you discover a show that resonates with your chid click the 
             </span>
             <span>
-              <FaRegHeart className='ml-2 inline' />
+              <FaRegHeart className='ml-[5px] inline' />
             </span>
             <span>
               {" "}to save it here
@@ -39,10 +39,10 @@ function Favorited({likes}) {
                 <FaRegHeart className='text-2xl cursor-pointer'/>
               }
             </div>
-          <div className='w-11 h-11 border-2 border-red-400 absolute -right-[2px] pointer-events-none'></div>
+          <div className='w-11 h-9 border-2 border-red-400 absolute -right-[2px] pointer-events-none'></div>
         </div>
       </div>
-        <div className='select-none'>
+        <div className='select-none hidden sm:flex items-end'>
           <img 
             src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663014376/Screen%20Time/Group_3_1_gfvodo.png" 
             alt="dancing deer" 
