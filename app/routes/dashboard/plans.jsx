@@ -1,10 +1,7 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import SavedPlans from '~/components/plans/SavedPlans'
 import FeaturedPlans from '~/components/plans/FeaturedPlans'
 import Hero from '../../components/plans/Hero'
-import CurrentPlan from '~/components/plans/CurrentPlan'
-import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
-import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
 import { getUser } from "~/services/users.server"
 import { createPlan, getFeaturedPlans } from "~/services/plans.server"
 import { useLoaderData, useActionData } from '@remix-run/react'
@@ -55,6 +52,13 @@ function Index() {
     }
     return setCurrentPlan([...currentPlan, show])
   }
+
+  useEffect(() => {
+    if (action?.success) {
+      setCurrentPlan([])
+      setFocus([])
+    }
+  }, [action])
 
   return (
     <div className="p-4 bg-blue-50">

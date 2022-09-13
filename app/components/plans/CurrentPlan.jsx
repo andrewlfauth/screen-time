@@ -7,6 +7,7 @@ import {AiOutlinePlusCircle} from 'react-icons/ai'
 function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
   const [done, setDone] = useState(false)
   const inputRef = useRef()
+  
   const handleClearPlan = () => {
     clearPlan()
     setDone(false)
@@ -14,7 +15,6 @@ function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
 
   useEffect(() => {
     if (action?.success) {
-      clearPlan()
       setDone(false)
     }
   }, [action])
@@ -35,19 +35,6 @@ function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
           Clear
         </button>
       </div>
-
-      {action?.error && (
-        <Flash duration={5000}>
-          <span className='ml-1 font-semibold text-red-500'
-          >{"- "}{action.error}</span>
-        </Flash>
-      )}
-      {action?.success && (
-        <Flash duration={5000}>
-          <span className='ml-1 font-semibold text-blue-900'
-          >{"- "}Success!</span>
-        </Flash>
-      )}
 
       <div className='flex flex-col'>
         <div className="flex flex-wrap items-center -ml-1">
