@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import SavedPlans from '~/components/plans/SavedPlans'
 import FeaturedPlans from '~/components/plans/FeaturedPlans'
 import Hero from '../../components/plans/Hero'
@@ -19,6 +19,7 @@ export async function loader({request}) {
 function Index() {
   const plans = useLoaderData()
   const action = useActionData()
+  const selectRef = useRef(null)
   const [focus, setFocus] = useState([])
   const [currentPlan, setCurrentPlan] = useState([])
   const focusOptions = [
@@ -57,6 +58,7 @@ function Index() {
     if (action?.success) {
       setCurrentPlan([])
       setFocus([])
+      selectRef.current.clearValue()
     }
   }, [action])
 
@@ -64,6 +66,7 @@ function Index() {
     <div className="p-4 bg-blue-50">
       <div className='lg:w-fit'>
         <Hero 
+          selectRef={selectRef}
           focusOptions={focusOptions}
           onClick={updatePlan}
           clearPlan={() => setCurrentPlan([])}

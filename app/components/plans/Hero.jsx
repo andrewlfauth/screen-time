@@ -5,7 +5,7 @@ import {AiOutlinePlusCircle} from 'react-icons/ai'
 import Flash from '../Flash'
 import {useTransition} from '@remix-run/react'
 
-function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChange, focus, onClick}) {
+function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChange, focus, onClick, selectRef}) {
   const transition = useTransition()
   const showErrorMsg = action?.error && transition?.state !== "submitting"
   const showSuccessMsg = action?.success && transition?.state !== "submitting"
@@ -55,6 +55,7 @@ function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChan
           <LearningGoalsSelect 
             options={focusOptions}
             onChange={onChange}
+            ref={selectRef}
           />
           <LearningGoalsDisplay 
             focus={focus}

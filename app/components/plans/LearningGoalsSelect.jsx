@@ -1,6 +1,7 @@
 import Select from 'react-select'
+import {forwardRef} from 'react'
 
-function LearningGoalsSelect({options, onChange}) {
+const LearningGoalsSelect = forwardRef(function LearningGoalsSelect({options, onChange}, ref) {
   return (
     <>
       <label 
@@ -10,6 +11,7 @@ function LearningGoalsSelect({options, onChange}) {
         I want my child to learn about...
       </label>
       <Select
+        ref={ref}
         placeholder='e.g. "Vocabulary"'
         className="w-fit min-w-[225px]" 
         name="focus"
@@ -20,6 +22,6 @@ function LearningGoalsSelect({options, onChange}) {
       />
     </>
   )
-}
+})
 
 export default LearningGoalsSelect
