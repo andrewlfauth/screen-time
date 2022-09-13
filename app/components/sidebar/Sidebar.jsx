@@ -16,7 +16,7 @@ function Sidebar() {
   }, [transition.state])
 
   return (
-    <div className={`${expand ? "z-10 w-[200px] px-2" : "px-1 lg:px-2"} bg-blue-900 pb-2 pt-[88px] rounded-md fixed z-10 top-0 lg:w-[205px] duration-300 h-screen flex flex-col justify-between`}>
+    <div className={`${expand ? "z-10 w-[200px] px-2" : "px-1 lg:px-2"} bg-white border-r shadow pb-2 pt-[88px] rounded-md fixed z-10 top-0 lg:w-[205px] duration-300 h-screen flex flex-col justify-between`}>
       <div className='space-y-2'>
         <DashboardTab expand={expand} />
         <PlansTab expand={expand} />
