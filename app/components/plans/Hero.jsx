@@ -1,6 +1,8 @@
 import CurrentPlan from './CurrentPlan'
 import LearningGoalsSelect from './LearningGoalsSelect'
 import LearningGoalsDisplay from './LearningGoalsDisplay'
+import {AiOutlinePlusCircle} from 'react-icons/ai'
+
 
 function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChange, focus, onClick}) {
   return (
@@ -9,7 +11,17 @@ function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChan
         <h2 className='text-2xl font-semibold tracking-tighter sm:text-4xl mb-2'>
         Start a new plan
         </h2>
-        <p className='max-w-xs text-sm tracking-tight text-gray-600 mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium itaque blanditiis.</p>
+        <p className='max-w-xs items-center mb-6 text-sm tracking-tight text-gray-600'>
+            <span>
+              Choose the topics that you want your child to learn. Click
+            </span>
+            <span>
+              <AiOutlinePlusCircle className='ml-[5px] mb-[3px] inline' />
+            </span>
+            <span>
+              {" "}to add a show to this plan.
+            </span>
+          </p>
       
         <div>
           {currentPlan.length ? (
@@ -31,7 +43,7 @@ function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChan
           />
         </div>
       </div>
-        <div className='select-none hidden sm:block'>
+        <div className='select-none hidden mt-4 sm:block'>
           <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_200/v1663024120/Screen%20Time/image_49_imj1iq.png" alt="fox" />
         </div>
     </div>

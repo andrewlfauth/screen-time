@@ -8,7 +8,7 @@ function Hero() {
         <h2 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
           Focused learning through the shows they watch
         </h2>
-        <p className='max-w-xs mb-6 text-sm tracking-tight text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium itaque blanditiis.</p>
+        <p className='max-w-xs mb-6 text-sm tracking-tight text-gray-600'>Find the shows that focus on the learning goals that are important to you.</p>
         <Link 
           to='/dashboard/plans'
           className='flex items-center justify-center px-4 py-2 font-medium tracking-tight text-white duration-100 bg-blue-900 rounded w-fit hover:bg-opacity-95'
