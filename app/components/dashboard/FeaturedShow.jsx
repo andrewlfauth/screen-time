@@ -1,8 +1,14 @@
 import shows from '~/shows.json'
 import ShowCard from '../ShowCard'
+import {useRef} from 'react'
 
 function FeaturedShow() {
-  const feature = shows[10]
+  let dateRef = useRef(new Date().getDate())
+  if (dateRef.current > 25) {
+    dateRef.current = dateRef.current - 20
+  }
+  const feature = shows[dateRef.current]
+  
   return (
     <div className='p-4 bg-white rounded-md shadow w-fit'>
       <h2 className='mb-2 text-lg font-semibold'>
