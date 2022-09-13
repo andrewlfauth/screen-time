@@ -4,7 +4,7 @@ import {FaHeart} from 'react-icons/fa'
 function FavoritesTab({expand}) {
   
   return (
-    <div className='select-none'>
+    <div className='select-none scale-75 md:scale-100'>
       <Link 
         to='/dashboard/favorites'
         className={`${expand ? "justify-between" : "justify-center"} flex lg:justify-between font-semibold text-2xl tracking-tight items-center shadow bg-white p-4 rounded-md group`}

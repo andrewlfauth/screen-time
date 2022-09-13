@@ -16,14 +16,14 @@ function Sidebar() {
   }, [transition.state])
 
   return (
-    <div className={`${expand ? "z-10 w-[200px] px-2" : "px-1 lg:px-2"} bg-white border-r shadow pb-2 pt-[88px] rounded-md fixed z-10 top-0 lg:w-[205px] duration-300 h-screen flex flex-col justify-between`}>
-      <div className='space-y-2'>
+    <div className={`${expand ? "z-10 w-[200px] px-2" : "lg:px-2"} bg-white border-r shadow pb-2 pt-[88px] rounded-md fixed z-50 top-0 lg:w-[205px] duration-300 h-full flex flex-col justify-between`}>
+      <div className='md:space-y-2'>
         <DashboardTab expand={expand} />
         <PlansTab expand={expand} />
         <ShowsTab expand={expand} />
         <FavoritesTab expand={expand} />
         <div
-          className='p-4 bg-white rounded-md shadow cursor-pointer lg:hidden group'
+          className='p-4 bg-white rounded-md shadow cursor-pointer lg:hidden group scale-75 md:scale-100'
           onClick={() => setExpand(!expand)}
         >
           <AiOutlineDoubleRight 
