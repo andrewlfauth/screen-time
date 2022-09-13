@@ -25,7 +25,7 @@ function LikeButton({show}) {
         onClick={() => setLike(!like)} 
         className='relative group'
       >
-        <div className="absolute z-10 w-24 py-1 text-sm font-bold text-center text-black bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-100 duration-100 delay-200 scale-50 -top-12 -left-10 shadow">
+        <div className="absolute z-10 w-24 py-1 text-sm font-bold text-center text-black bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-100 duration-100 delay-200 scale-75 -top-12 -left-10 shadow">
           <div className="w-2 h-2 bg-white absolute left-0 right-0 mx-auto rotate-45 -bottom-[4px]"></div>
           {user ? like ? "Unlike" : "Like" : "Login to like"}
         </div>
