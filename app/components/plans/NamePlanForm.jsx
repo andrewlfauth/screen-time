@@ -8,7 +8,7 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
         <input type="hidden" name="plan" value={currentPlan} />
         <label 
           htmlFor="planName"
-          className='font-semibold -top-[12px] text-blue-900 absolute text-sm'
+          className='font-semibold -top-[18px] text-blue-900 absolute'
         >
             Name your plan
           </label>

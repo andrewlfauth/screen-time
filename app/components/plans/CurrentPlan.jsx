@@ -7,84 +7,67 @@ import {AiOutlinePlusCircle} from 'react-icons/ai'
 function CurrentPlan({currentPlan, handleRemoveImage, action, clearPlan}) {
   const [done, setDone] = useState(false)
   const inputRef = useRef()
-
-useEffect(() => {
-  if (action?.success) {
+  const handleClearPlan = () => {
     clearPlan()
     setDone(false)
   }
-}, [action])
+
+  useEffect(() => {
+    if (action?.success) {
+      clearPlan()
+      setDone(false)
+    }
+  }, [action])
 
   return (
-    <div>
-      <h2 className='flex items-end mb-2 text-lg font-semibold'>
-      🆕 Create Plan
-        {currentPlan.length ? (
-        <>
-            <button 
-            onClick={() => setDone(true)}
-            className='px-4 py-1 ml-4 mr-2 text-sm font-semibold text-center text-white bg-blue-900 rounded-full shadow'
-          >
-            Done
-          </button>
-          <button 
-            onClick={clearPlan}
-            className='px-4 py-1 text-sm font-semibold text-center rounded-full shadow bg-blue-50 text-neutral-500'
-          >
-            Clear
-          </button>
-        </>
-        ) : ""}
+    <div className="p-2 rounded-md border shadow-inner">
+      <div className='mb-2'>
+        <button 
+          onClick={() => setDone(true)}
+          className='px-4 py-1 mr-2 text-sm font-semibold text-center text-white bg-blue-900 rounded-full shadow'
+        >
+          Done
+        </button>
+        <button 
+          onClick={handleClearPlan}
+          className='px-4 py-1 text-sm font-semibold text-center rounded-full shadow bg-blue-50 text-neutral-500'
+        >
+          Clear
+        </button>
+      </div>
 
-        {action?.error && (
-          <Flash duration={5000}>
-            <span className='ml-1 text-base text-red-500'
-            >{"- "}{action.error}</span>
-          </Flash>
-        )}
-        {action?.success && (
-          <Flash duration={5000}>
-            <span className='ml-1 text-base text-blue-900'
-            >{"- "}Success!</span>
-          </Flash>
-        )}
+      {action?.error && (
+        <Flash duration={5000}>
+          <span className='ml-1 font-semibold text-red-500'
+          >{"- "}{action.error}</span>
+        </Flash>
+      )}
+      {action?.success && (
+        <Flash duration={5000}>
+          <span className='ml-1 font-semibold text-blue-900'
+          >{"- "}Success!</span>
+        </Flash>
+      )}
 
-      </h2>
-      <div>
-
-      {
-        !currentPlan.length ? (
-          <p className="max-w-md text-xs">
-            Discover the shows that fit your child's needs.<br/>
-            <span className='flex items-end'>
-              To add a show click
-              <AiOutlinePlusCircle className='ml-1 text-lg' />
-            </span>
-          </p>
-        ) : (
-          <div className='flex flex-col'>
-          <div className="flex flex-wrap items-center">
-              {currentPlan.map(s => 
-                <CurrentPlanImage 
-                  key={s} 
-                  image={s}
-                  handleRemoveImage={handleRemoveImage} 
-                />
-              )}
-           </div>
-           
-            {
-              done ? (
-                <NamePlanForm 
-                currentPlan={currentPlan}
-                goBack={() => setDone(false)}
-                ref={inputRef}
-                />
-                ) : ""
-              }
-          </div>
+      <div className='flex flex-col'>
+        <div className="flex flex-wrap items-center -ml-1">
+          {currentPlan.map(s => 
+            <CurrentPlanImage 
+              key={s} 
+              image={s}
+              handleRemoveImage={handleRemoveImage} 
+            />
           )}
-        </div>
+        </div>   
+        {done ? (
+          <NamePlanForm 
+          currentPlan={currentPlan}
+          goBack={() => setDone(false)}
+          ref={inputRef}
+          />
+          ) : ""
+        }
+      </div>
     </div>
   )
 }

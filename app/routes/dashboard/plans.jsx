@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import SavedPlans from '~/components/plans/SavedPlans'
 import FeaturedPlans from '~/components/plans/FeaturedPlans'
+import Hero from '../../components/plans/Hero'
 import CurrentPlan from '~/components/plans/CurrentPlan'
 import LearningGoalsSelect from '~/components/plans/LearningGoalsSelect'
 import LearningGoalsDisplay from '~/components/plans/LearningGoalsDisplay'
@@ -58,33 +59,18 @@ function Index() {
   return (
     <div className="p-4 bg-blue-50">
       <div className='w-fit'>
-        <div className="flex justify-between w-full p-4 bg-white rounded-md shadow">
-          <div>
-            <CurrentPlan
-              action={action}
-              currentPlan={currentPlan}
-              clearPlan={() => setCurrentPlan([])}
-              handleRemoveImage={(e) => 
-                setCurrentPlan(currentPlan.filter(s => 
-                  s !== e.target.parentElement.getAttribute('data-image')))
-              } 
-            />
-            <LearningGoalsSelect 
-              options={focusOptions}
-              onChange={(e) => setFocus(e)}
-            />
-            <LearningGoalsDisplay 
-              focus={focus}
-              onClick={updatePlan}
-              currentPlan={currentPlan}
-            />
-          </div>
-          {!focus.length && !currentPlan.length && (
-            <div className='items-end hidden sm:flex'>
-              <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_250/v1662930914/Screen%20Time/Group_3_cqbghw.png" alt="rabbit and bear" />
-            </div>
-          )}
-        </div>
+        <Hero 
+          focusOptions={focusOptions}
+          onClick={updatePlan}
+          clearPlan={() => setCurrentPlan([])}
+          action={action}
+          currentPlan={currentPlan}
+          focus={focus}
+          onChange={(e) => setFocus(e)}
+          removeImage={(e) => 
+            setCurrentPlan(currentPlan.filter(s => 
+              s !== e.target.parentElement.getAttribute('data-image')))}
+        />
         <div className='flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
           <SavedPlans plans={plans.savedPlans} />
           <FeaturedPlans plans={plans.featuredPlans} />

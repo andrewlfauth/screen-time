@@ -7,7 +7,7 @@ function LearningGoalsDisplay({focus, onClick, currentPlan}) {
   }
 
   return (
-    <div className="grid gap-2 mt-4 lg:gap-4 md:grid-cols-2">
+    <div className="grid gap-2 mt-4 lg:gap-4 md:grid-cols-2 w-[600px]">
       {focus.length ? shows.map(s => {
         return filterShows(s) ? 
           <ShowCard 

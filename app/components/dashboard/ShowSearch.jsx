@@ -112,7 +112,7 @@ function ShowSearch() {
             </button>
           </div>
         </div>
-        <div className='flex items-end -mb-2'>
+        <div className='hidden sm:flex items-end select-none -mb-2'>
           <img 
             src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663012532/Screen%20Time/image_13_1_nycrjx.png" 
             alt="bear sitting"

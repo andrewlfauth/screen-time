@@ -42,7 +42,7 @@ function Favorited({likes}) {
           <div className='w-11 h-11 border-2 border-red-400 absolute -right-[2px] pointer-events-none'></div>
         </div>
       </div>
-        <div>
+        <div className='select-none'>
           <img 
             src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663014376/Screen%20Time/Group_3_1_gfvodo.png" 
             alt="dancing deer" 
