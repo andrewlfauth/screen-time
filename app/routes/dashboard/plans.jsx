@@ -63,28 +63,25 @@ function Index() {
   }, [action])
 
   return (
-    <div className="p-4 bg-blue-50">
-      <div className='lg:w-fit'>
-        <Hero 
-          selectRef={selectRef}
-          focusOptions={focusOptions}
-          onClick={updatePlan}
-          clearPlan={() => setCurrentPlan([])}
-          action={action}
-          currentPlan={currentPlan}
-          focus={focus}
-          onChange={(e) => setFocus(e)}
-          removeImage={(e) => 
-            setCurrentPlan(currentPlan.filter(s => 
-              s !== e.target.parentElement.getAttribute('data-image')))}
-        />
-        <div className='flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
-          <SavedPlans plans={plans.savedPlans} />
-          <FeaturedPlans plans={plans.featuredPlans} />
-        </div>
+    <div>
+      <Hero 
+        selectRef={selectRef}
+        focusOptions={focusOptions}
+        onClick={updatePlan}
+        clearPlan={() => setCurrentPlan([])}
+        action={action}
+        currentPlan={currentPlan}
+        focus={focus}
+        onChange={(e) => setFocus(e)}
+        removeImage={(e) => 
+          setCurrentPlan(currentPlan.filter(s => 
+            s !== e.target.parentElement.getAttribute('data-image')))}
+      />
+      <div className='flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
+        <SavedPlans plans={plans.savedPlans} />
+        <FeaturedPlans plans={plans.featuredPlans} />
       </div>
     </div>
-
   )
 }
 

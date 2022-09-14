@@ -3,7 +3,8 @@ import useDarkMode from './components/hooks/useDarkMode';
 import {connect} from './services/db.server'
 import Navbar from './components/Navbar'
 import Sidebar from './components/sidebar/Sidebar'
-import { useLocation } from '@remix-run/react';
+import { useLocation, Link } from '@remix-run/react';
+import New from './components/sidebar/New'
 
 const {
   Links,
@@ -50,10 +51,14 @@ export default function App() {
       </head>
       <body className='font-inter'>
         <Navbar toggle={() => setDarkMode(!darkMode)} />
-        {showSidebar && <Sidebar />}
-        <div className='h-screen bg-blue-50'>
-          <Outlet />
-        </div>
+        {showSidebar ? (
+          <div className="flex min-h-screen">
+            {showSidebar && <New />}
+            <div className="w-full bg-blue-50 flex jusitfy-center p-4 lg:p-8">
+              <Outlet />
+            </div>
+          </div>
+        ) : <Outlet /> }
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

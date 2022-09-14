@@ -17,8 +17,8 @@ function Index() {
   const data = useLoaderData()
 
   return (
-    <div className='bg-blue-50'>
-      <div className='w-full p-4 space-y-4 md:w-fit'>
+    <div>
+      <div className='space-y-4'>
         <div className='flex'>
           <Hero />
         </div>

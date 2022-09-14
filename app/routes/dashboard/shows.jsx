@@ -20,7 +20,7 @@ function Index() {
   setUser(userData)
 
   return (
-    <div className="p-4 bg-blue-50">
+    <div>
       <ShowSearch />        
     </div>
   )
