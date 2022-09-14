@@ -3,7 +3,7 @@ import useDarkMode from './components/hooks/useDarkMode';
 import {connect} from './services/db.server'
 import Navbar from './components/Navbar'
 import { useLocation } from '@remix-run/react';
-import Sidebar from './components/Sidebar'
+import Nav from './components/dashboard/Nav'
 
 const {
   Links,
@@ -52,7 +52,7 @@ export default function App() {
         <Navbar toggle={() => setDarkMode(!darkMode)} />
         {showSidebar ? (
           <div className="flex min-h-screen">
-            {showSidebar && <Sidebar />}
+            {showSidebar && <Nav />}
             <div className="w-full bg-blue-50 flex jusitfy-center p-4 ml-[48px] lg:ml-[225px]">
               <Outlet />
             </div>
