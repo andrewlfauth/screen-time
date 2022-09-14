@@ -7,7 +7,7 @@ function NavLink({to, title, children}) {
     <div className='relative group'>
       <Link 
         to={to} 
-        className={`${activePath === to ? "bg-blue-50 text-gray-900" : "text-gray-400"} rounded-md hover:bg-blue-50 hover:bg-opacity-90 p-2 flex lg:justify-between`}
+        className={`${activePath === to ? "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-50"} rounded-md p-2 flex lg:justify-between`}
       >
         <div className='flex'>
           {children}
