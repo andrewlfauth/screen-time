@@ -5,6 +5,9 @@ module.exports = {
     'app/*/**/*.{jsx, js}',
     'app/root.{jsx, js}',
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       fontFamily: {
