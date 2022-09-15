@@ -2,7 +2,6 @@ import Users from '~/models/Users'
 import shows from '~/shows.json'
 import {getUser} from './users.server'
 import {redirect} from "@remix-run/node"
-import FeaturedPlans from '~/components/plans/FeaturedPlans'
 
 export async function createPlan(request) {
   const userId = await request.headers.get("Cookie")
