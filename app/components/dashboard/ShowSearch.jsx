@@ -86,7 +86,7 @@ function ShowSearch() {
           <h1 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
             Discover the shows that fit your child's needs
           </h1>
-          <h2 className='text-xl font-semibold mt-8'>
+          <h2 className='mt-4 text-xl font-semibold sm:mt-8'>
             Search by
           </h2>
           <div className='flex flex-col mt-2 sm:flex-row sm:space-x-4'>
@@ -95,14 +95,14 @@ function ShowSearch() {
                 ref={focusInputRef}
                 options={focusOptions} 
                 onChange={updateFocus} 
-                className="min-w-[200px]"
+                className="min-w-[200px] mb-2 sm:mb-0"
               />  
               <SelectFilter
                 name="age"
                 ref={ageInputRef}
                 options={ageOptions} 
                 onChange={updateAges} 
-                className="min-w-[100px]"
+                className="min-w-[100px] mb-4 sm:mb-0"
               />
               <button
               onClick={handleShowAll}
@@ -112,7 +112,7 @@ function ShowSearch() {
             </button>
           </div>
         </div>
-        <div className='hidden sm:flex items-end select-none -mb-2'>
+        <div className='items-end hidden -mb-2 select-none sm:flex'>
           <img 
             src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663012532/Screen%20Time/image_13_1_nycrjx.png" 
             alt="bear sitting"
