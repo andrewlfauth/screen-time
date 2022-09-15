@@ -10,7 +10,7 @@ function FeaturedShow() {
   const feature = shows[dateRef.current]
   
   return (
-    <div className='p-4 bg-white rounded-md shadow w-fit'>
+    <div className='flex flex-col items-center w-full p-4 bg-white rounded-md shadow sm:block'>
       <h2 className='mb-2 text-lg font-semibold'>
         🍿 Featured Show:
         <span className='text-xl text-blue-900'>{" " + feature.title}</span>
