@@ -1,4 +1,5 @@
 import Users from '~/models/Users'
+import FeaturedPlans from '~/models/FeaturedPlans'
 import shows from '~/shows.json'
 import {getUser} from './users.server'
 import {redirect} from "@remix-run/node"
@@ -43,18 +44,27 @@ export async function getPlan(request, params) {
 }
 
 export async function getFeaturedPlans(username) {
-  const plansArray = await Users
+  const currentFeaturedPlans = await FeaturedPlans.find({})
+  if (currentFeaturedPlans.length) {
+    return currentFeaturedPlans[0].plans
+  }
+
+  const randomPlans = await Users
   .aggregate([
     {$match: {"plans.0": {"$exists": true}}},
     {$match: {"username": {$ne: username}}},
     {$project: {plans: 1, username: 1}},
     {$sample: {size: 2}}
   ])
-  const featuredPlans = plansArray.map(p => {
-      return {username: p.username, plan: p.plans[Math.floor(Math.random() * p.plans.length)]}
-    })
-    
-    return featuredPlans
+  const featuredPlans = randomPlans.map(p => {
+    return {
+      username: p.username, 
+      plan: p.plans[Math.floor(Math.random() * p.plans.length)]
+    }
+  })
+  await FeaturedPlans.create({plans: featuredPlans})
+
+  return featuredPlans
 }
 
 export async function getUnownedPlan(username, planName) {
