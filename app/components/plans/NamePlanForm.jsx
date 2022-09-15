@@ -1,38 +1,37 @@
-import {forwardRef} from 'react'
+import {forwardRef, useState} from 'react'
 import { Form } from '@remix-run/react'
 
 const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref) {
+  const [showSubmit, setShowSubmit] = useState(false)
+
   return (
-    <Form method="post" className='flex max-h-[116px] mt-6'>
-      <div className='relative pt-2 '>
-        <input type="hidden" name="plan" value={currentPlan} />
+    <Form method="post" className='max-h-[116px] mt-1'>
+      <input type="hidden" name="plan" value={currentPlan} />
+      <div className='flex justify-between mb-1'>
         <label 
           htmlFor="planName"
-          className='font-semibold -top-[18px] text-blue-900 absolute'
+          className='font-semibold text-blue-900'
         >
-            Name your plan
-          </label>
-        <input 
-          ref={ref}
-          type="text" name="planName" required
-          placeholder='e.g. "Manners & Curiosity"' 
-          className='px-2 py-2 border rounded outline-blue-900 placeholder:text-sm'
-        />
+          Name your plan
+        </label>
+        {showSubmit && (
+          <button 
+            type="submit"
+            className='text-emerald-500 font-semibold'
+          >
+            Save
+          </button>
+        )}
       </div>
-      <div className='space-x-2 mt-[10px] ml-2 flex'>
-        <button 
-          type="submit"
-          className='h-full px-4 font-semibold text-white bg-blue-900 rounded'
-        >
-          Save
-        </button>
-        {/* <button
-          className='h-full px-4 font-semibold rounded bg-blue-50 text-neutral-500'
-          onClick={goBack}
-        >
-          Back
-        </button> */}
-      </div>
+      <input 
+        ref={ref}
+        type="text" 
+        name="planName" 
+        required
+        placeholder='e.g. "Manners & Curiosity"' 
+        className='px-2 py-2 border rounded outline-blue-900 placeholder:text-sm w-full'
+        onChange={(e) => e.target.value ? setShowSubmit(true) : setShowSubmit(false) }    
+      />
     </Form>
   )
 })
