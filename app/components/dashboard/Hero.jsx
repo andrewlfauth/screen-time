@@ -4,7 +4,7 @@ import {Link} from '@remix-run/react'
 function Hero() {
   return (
     <div className='flex justify-between w-full px-4 py-6 bg-white rounded-md shadow sm:py-8'>
-      <div className='max-w-sm'>
+      <div className='max-w-md'>
         <h2 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
           Focused learning through the shows they watch
         </h2>
@@ -17,7 +17,7 @@ function Hero() {
           <AiOutlinePlusCircle className='ml-4 text-xl' />
         </Link>
       </div>
-      <div className='flex select-none items-end h-[107%] hidden sm:flex'>
+      <div className='select-none items-end h-[107%] hidden sm:flex'>
         <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1662926386/Screen%20Time/image_18_uctoju.png" alt="hedgehog by a tree" />
       </div>
     </div>

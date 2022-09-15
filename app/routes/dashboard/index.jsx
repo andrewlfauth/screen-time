@@ -15,7 +15,7 @@ function Index() {
   const data = useLoaderData()
 
   return (
-    <div>
+    <div className='md:w-[630px] lg:w-[650px]'>
       <div className='space-y-4'>
         <div className='flex'>
           <Hero />
