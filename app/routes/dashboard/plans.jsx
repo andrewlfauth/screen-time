@@ -63,7 +63,7 @@ function Index() {
   }, [action])
 
   return (
-    <div>
+    <div className='w-full'>
       <Hero 
         selectRef={selectRef}
         focusOptions={focusOptions}
