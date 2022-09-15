@@ -2,10 +2,8 @@ import FeaturedShow from '~/components/dashboard/FeaturedShow'
 import FeaturedPlans from '../../components/plans/FeaturedPlans'
 import {getUser} from '~/services/users.server'
 import {getFeaturedPlans} from '~/services/plans.server'
-import { useLoaderData, Link } from '@remix-run/react'
-import {AiOutlinePlusCircle} from 'react-icons/ai'
+import { useLoaderData } from '@remix-run/react'
 import Hero from '../../components/dashboard/Hero'
-
 
 export async function loader({request}) {
   const user = await getUser(request)
