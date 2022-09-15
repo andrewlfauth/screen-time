@@ -1482,6 +1482,14 @@ video {
   transition-duration: 150ms;
 }
 
+.\!transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+
 .delay-200 {
   transition-delay: 200ms;
 }
@@ -1539,16 +1547,12 @@ video {
     --tw-bg-opacity: 0.95;
   }
 
-  .hover\:bg-opacity-90:hover {
-    --tw-bg-opacity: 0.9;
-  }
-
-  .hover\:bg-opacity-70:hover {
-    --tw-bg-opacity: 0.7;
-  }
-
   .hover\:bg-opacity-50:hover {
     --tw-bg-opacity: 0.5;
+  }
+
+  .hover\:bg-opacity-90:hover {
+    --tw-bg-opacity: 0.9;
   }
 
   .group:hover .group-hover\:block {
@@ -1704,11 +1708,6 @@ video {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 
