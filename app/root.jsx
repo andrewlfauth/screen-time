@@ -53,7 +53,7 @@ export default function App() {
         {showSidebar ? (
           <div className="flex min-h-screen">
             {showSidebar && <Nav />}
-            <div className="w-full bg-blue-50 flex jusitfy-center p-4 ml-[48px] lg:ml-[225px]">
+            <div className="w-full bg-blue-50 flex jusitfy-center p-4 ml-[40px] lg:ml-[225px]">
               <Outlet />
             </div>
           </div>
