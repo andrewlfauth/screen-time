@@ -1,7 +1,8 @@
 import {forwardRef, useState} from 'react'
-import { Form } from '@remix-run/react'
+import { Form, useTransition } from '@remix-run/react'
 
 const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref) {
+  const transition = useTransition()
   const [showSubmit, setShowSubmit] = useState(false)
 
   return (
@@ -17,9 +18,10 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
         {showSubmit && (
           <button 
             type="submit"
+            disabled={transition.submission}
             className='text-emerald-500 font-semibold'
           >
-            Save
+            {transition.submission ? "Saving..." : "Save"}
           </button>
         )}
       </div>
