@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 
 
 
-function Flash({duration, children}) {
+function Flash({duration, className, children}) {
   const [hide, setHide] = useState(false)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function Flash({duration, children}) {
   }, [duration])
 
   return hide ? null : (
-    <div>
+    <div className={className}>
       {children}
     </div>
   )
