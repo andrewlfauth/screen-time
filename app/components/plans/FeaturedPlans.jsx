@@ -10,7 +10,7 @@ function FeaturedPlans({plans}) {
       <div className="space-y-2">
         {plans.map(plan => 
           <PlanLink 
-            key={plan} 
+            key={plan.username} 
             plan={plan.plan} 
             creator={plan.username} 
           />
