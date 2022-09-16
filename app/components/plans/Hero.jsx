@@ -65,7 +65,7 @@ function Hero({action, currentPlan, clearPlan, removeImage, focusOptions, onChan
         </div>
       </div>
         <div className='hidden mt-10 select-none sm:block'>
-          <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663361694/Screen%20Time/card_7_ohj31q.png" alt="fox" />
+          <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663361694/Screen%20Time/card_7_ohj31q.png" alt="koala" />
         </div>
     </div>
   )

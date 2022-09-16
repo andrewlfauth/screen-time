@@ -15,7 +15,7 @@ function Favorited({likes}) {
           <h1 className='mb-2 text-2xl font-semibold tracking-tighter sm:text-4xl'>
             Keep track of the shows that make an impact
           </h1>
-          <p className='max-w-xs items-center mb-6 text-sm tracking-tight text-gray-600'>
+          <p className='items-center max-w-xs mb-6 text-sm tracking-tight text-gray-600'>
             <span>
               When you discover a show that resonates with your chid click the 
             </span>
@@ -30,7 +30,7 @@ function Favorited({likes}) {
             <BiInfoCircle className='text-2xl' />
             <div className='flex items-center'>
               <FaBaby />
-              <span className='font-semibold ml-1'>1, 2, 3</span>  
+              <span className='ml-1 font-semibold'>1, 2, 3</span>  
             </div>
             <div onClick={() => setClicked(!clicked)}>
               {clicked ? 
@@ -42,15 +42,15 @@ function Favorited({likes}) {
           <div className='w-11 h-9 border-2 border-red-400 absolute -right-[2px] pointer-events-none'></div>
         </div>
       </div>
-        <div className='select-none hidden sm:flex items-end'>
+        <div className='items-end hidden select-none sm:flex'>
           <img 
-            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663014376/Screen%20Time/Group_3_1_gfvodo.png" 
-            alt="dancing deer" 
+            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663362110/Screen%20Time/zebra_1_hocfx8.png" 
+            alt="zebra" 
           />
         </div>
       </div>
       {likes.length ? (
-        <div className='grid gap-2 mt-4 sm:grid-cols-2 border-t pt-4'>
+        <div className='grid gap-2 pt-4 mt-4 border-t sm:grid-cols-2'>
           {favoriteShows.map(s => 
             <ShowCard key={s.title} show={s} />
           )}
