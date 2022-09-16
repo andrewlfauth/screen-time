@@ -1,7 +1,25 @@
-import {useLocation, Link} from '@remix-run/react'
+import {useLocation, Link, useTransition} from '@remix-run/react'
+import { useEffect, useState } from 'react'
 
 function NavLink({to, title, children}) {
   const activePath = useLocation().pathname
+  const transition = useTransition()
+  const [spin, setSpin] = useState(false)
+  const isLoading = 
+    transition.state === 'loading' &&
+    transition.location.pathname === to
+
+  useEffect(() => {
+    if (isLoading) {
+      let t1 = setTimeout(() =>  {
+        setSpin(true)
+      }, 300)
+      return () => clearTimeout(t1)
+    }else {
+      setSpin(false)
+    }
+  }, [isLoading])
+
 
   return (
     <div className='relative group'>
@@ -12,7 +30,9 @@ function NavLink({to, title, children}) {
         rounded-md p-2 flex lg:justify-between`}
       >
         <div className='flex'>
-          {children}
+          <div className={`${spin ? "animate-spin" : ""} lg:mr-4`}>
+            {children}
+          </div>
           <span className='hidden lg:block'>{title}</span>
         </div>
       </Link>
