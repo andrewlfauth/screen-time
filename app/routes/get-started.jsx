@@ -1,7 +1,8 @@
-import {Form, useActionData, Link} from '@remix-run/react'
+import {Form, useActionData, Link, useTransition} from '@remix-run/react'
 import {createUser, getUserSession} from '~/services/users.server'
 import {useState} from 'react'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+import Flash from '~/components/Flash'
 
 export async function action({request}) {
   return createUser(request)
@@ -13,16 +14,22 @@ export async function loader({request}) {
 
 function Index() {
   const action = useActionData()
+  const transition = useTransition()
   const [showPw, setShowPw] = useState(false)
   const [showPwChanger, setShowPwChanger] = useState(false)
+  const showError = 
+    action?.error && transition.state !== "submitting"
 
   return (
     <div className="flex justify-center h-screen py-32 lg:items-center bg-neutral-50">
       <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
         <Form method="post" className="p-10 pb-6 shadow border relative bg-white rounded-md w-[350px]">
           {
-            action?.error && 
-            <span className='absolute bottom-[10px] left-0 right-0 text-center font-semibold text-red-500'>{action.error}</span>
+            showError && (
+              <Flash duration={5000}>
+                <span className='absolute top-[10px] left-0 right-0 text-center font-semibold text-red-500'>{action.error}</span>
+              </Flash>
+            )
           }
           <h1 className="mb-12 text-xl font-semibold text-center">Create an Account</h1>
 
