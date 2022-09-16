@@ -7,28 +7,37 @@ export async function loader({request}) {
 
 export default function Index() {
   return (
-    <div className='h-screen duration-300 bg-neutral-50 dark:bg-gray-800'>
-      <div className='px-4 py-32 mx-auto sm:px-6 font-poppins lg:px-8 max-w-7xl'>
-        <div className='flex flex-col items-center'>
-          <h1 className='text-3xl md:text-6xl font-semibold text-center tracking-tight lg:leading-[1.1] mx-auto max-w-3xl dark:text-white'>
-              Make The Most Of Your Child's
-              <span className='text-blue-900'>{" "}Screen Time</span>
-            </h1>
-          <p className='max-w-xl text-sm md:text-[16px] mx-auto text-center mt-2 lg:mt-4 dark:text-gray-300 leading-6'>Screen time doesn't have to be a waste of time. Nurture your child's learning by finding the television shows that fit their needs.</p>
-          <div className='flex flex-col w-full mt-8 space-y-4 md:mt-12 lg:w-auto lg:space-y-0 lg:space-x-4 lg:flex-row'>
-            <Link 
-              to='/get-started'
-              className='block w-full py-2 mx-auto text-lg font-semibold text-center text-white duration-100 bg-blue-900 border-4 border-blue-900 rounded-md lg:w-52 md:w-2/3 lg:mx-0 hover:bg-opacity-95'
+    <div className="py-28">
+      <div className="flex flex-col items-center px-4 mx-auto lg:flex-row lg:justify-evenly font-inter max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex-shrink max-w-3xl text-center lg:text-left">
+          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.1] tracking-tight">
+            Make the Most of Your Child's {" "}
+            <span className="text-blue-900">Screen Time</span>
+          </h1>
+          <p className="max-w-xl mx-auto mt-2 font-medium text-gray-800 md:text-lg lg:mx-0">
+            Screen time doesn't have to be a waste of time. Nurture your child's learning by finding the television shows that fit their needs.
+          </p>
+          <div className="mt-12 space-x-4 lg:flex">
+            <Link
+              to="/get-started"
+              className="px-6 py-3 text-lg font-semibold text-white bg-blue-900 border-4 border-blue-900 rounded-md md:px-12 hover:bg-opacity-90"
             >
               Get Started
             </Link>
-            <Link 
-              to='/login'
-              className='block w-full py-2 mx-auto text-lg font-semibold text-center duration-100 border-4 border-black rounded-md hover:skew-y-1 md:w-2/3 lg:mx-0 lg:w-44'
+            <Link
+              to="/login"
+              className="px-6 py-3 text-lg font-semibold border-4 border-black rounded-md md:px-12 hover:skew-x-3"
             >
               Login
             </Link>
           </div>
+        </div>
+        <div className='mt-12 md:mt-20 lg:mt-0'>
+          <img 
+            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_400/v1663359129/Screen%20Time/zebra_df7pjl.png" 
+            alt="zebra"
+            className='md:min-w-[500px] lg:min-w-[350px] lg:ml-4' 
+          />
         </div>
       </div>
     </div>
