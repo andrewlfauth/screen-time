@@ -1248,6 +1248,10 @@ video {
   border-top-width: 4px;
 }
 
+.border-t-8 {
+  border-top-width: 8px;
+}
+
 .border-blue-900 {
   --tw-border-opacity: 1;
   border-color: rgb(30 58 138 / var(--tw-border-opacity));
@@ -1280,6 +1284,18 @@ video {
 
 .border-opacity-40 {
   --tw-border-opacity: 0.4;
+}
+
+.border-opacity-90 {
+  --tw-border-opacity: 0.9;
+}
+
+.border-opacity-50 {
+  --tw-border-opacity: 0.5;
+}
+
+.border-opacity-10 {
+  --tw-border-opacity: 0.1;
 }
 
 .bg-blue-50 {
