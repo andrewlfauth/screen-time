@@ -30,7 +30,7 @@ function Index() {
           </div>
           <div className="relative mt-10">
           <label htmlFor="password" className="absolute flex items-center -top-8">
-              Create your
+              Enter your
               <span className="ml-1 font-medium text-blue-900">
                 {" "} password
               </span>
