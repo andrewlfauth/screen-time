@@ -4,7 +4,13 @@ function Index() {
       <h1 className='px-4 text-lg font-semibold lg:text-2xl'>Info</h1>
       <p className='mt-10'>
         <span className='text-sm'>Created by:{" "}</span>
-        <span className='block ml-2 font-semibold text-blue-900 '>Andrew L Fauth</span>
+        <a 
+          href="https://www.github.com/andrewlfauth" target="_blank" 
+          rel="noreferrer"
+          className='block ml-2 font-semibold text-blue-900 underline'
+        >
+          Andrew Fauth
+        </a>
       </p>
       <p className='mt-4 lg:mt-6'>
         <span className='text-sm'>Assets by:{" "}</span>
