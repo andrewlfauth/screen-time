@@ -13,20 +13,20 @@ function Index() {
   const [showPwChanger, setShowPwChanger] = useState(false)
 
   return (
-    <div className="py-32 bg-neutral-50 flex items-center justify-center h-screen">
-      <div className='px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl'>
+    <div className="flex justify-center h-screen py-32 lg:items-center bg-neutral-50">
+      <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
         <Form method="post" className="p-10 relative bg-white rounded-md w-[350px]">
           {
             action?.error && 
             <span className='absolute bottom-[10px] left-0 right-0 text-center font-semibold text-red-500'>{action.error}</span>
           }
-          <h1 className="font-semibold text-xl mb-12 text-center">Welcome Back</h1>
+          <h1 className="mb-12 text-xl font-semibold text-center">Welcome Back</h1>
 
           <div className="relative">
             <label htmlFor="username" className="absolute -top-8">
               Enter your <span className="font-medium text-blue-900">username</span>
             </label>
-            <input required type="text" name="username" className="bg-blue-50 rounded-md p-1 w-full border outline-blue-900" />
+            <input required type="text" name="username" className="w-full p-1 border rounded-md bg-blue-50 outline-blue-900" />
           </div>
           <div className="relative mt-10">
           <label htmlFor="password" className="absolute flex items-center -top-8">
@@ -55,7 +55,7 @@ function Index() {
               required 
               type={showPw ? "text" : "password"} 
               name="password" 
-              className="bg-blue-50 rounded-md p-1 w-full border outline-blue-900"
+              className="w-full p-1 border rounded-md bg-blue-50 outline-blue-900"
               onChange={(e) => {
                 if (e.target.value.length) {
                   setShowPwChanger(true)
@@ -67,7 +67,7 @@ function Index() {
           </div>
           <button
             type="submit"
-            className="rounded-md w-full text-white py-2 bg-blue-900 mt-6 font-semibold"
+            className="w-full py-2 mt-6 font-semibold text-white bg-blue-900 rounded-md"
           >
             Login
           </button>

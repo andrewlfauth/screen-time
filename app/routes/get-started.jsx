@@ -17,7 +17,7 @@ function Index() {
   const [showPwChanger, setShowPwChanger] = useState(false)
 
   return (
-    <div className="flex items-center justify-center h-screen py-32 bg-neutral-50">
+    <div className="flex justify-center h-screen py-32 lg:items-center bg-neutral-50">
       <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
         <Form method="post" className="p-10 shadow border relative bg-white rounded-md w-[350px]">
           {
