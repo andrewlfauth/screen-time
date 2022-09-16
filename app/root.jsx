@@ -15,13 +15,14 @@ const {
 
 export const meta = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Screen Time App",
   viewport: "width=device-width,initial-scale=1",
 });
 
 export const links = () => {
   return [
-    {rel: "stylesheet", href: tailwindURL}
+    {rel: "stylesheet", href: tailwindURL},
+    {rel: "icon", href: "https://res.cloudinary.com/dpnkrz8c8/image/upload/w_20/v1663012532/Screen%20Time/image_13_1_nycrjx.png"},
   ]
 }
 
