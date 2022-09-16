@@ -18,7 +18,7 @@ function Hero() {
         </Link>
       </div>
       <div className='select-none items-end h-[107%] hidden sm:flex'>
-        <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1662926386/Screen%20Time/image_18_uctoju.png" alt="hedgehog by a tree" />
+        <img src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_200/v1663288276/Screen%20Time/leopard_3_v13rcl.png" alt="hedgehog by a tree" />
       </div>
     </div>
   )
