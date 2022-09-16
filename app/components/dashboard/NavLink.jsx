@@ -7,7 +7,7 @@ function NavLink({to, title, children}) {
     <div className='relative group'>
       <Link 
         to={to} 
-        className={`${to === '/dashboard' ? activePath === to ?  "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-50" : activePath.includes(to) ? "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-50"}
+        className={`${to === '/dashboard' ? activePath === to ?  "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-60" : activePath.includes(to) ? "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-60"}
         rounded-md p-2 flex lg:justify-between`}
       >
         <div className='flex'>
