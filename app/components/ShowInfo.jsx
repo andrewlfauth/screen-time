@@ -15,7 +15,7 @@ function ShowInfo({show, toggle}) {
       <span className='block text-2xl font-medium text-center'>
         {showDescription ? "Description" : "Learning Goals"}
       </span>
-      <div className='p-2 mx-4 mt-2 font-medium text-blue-900 rounded-md bg-slate-300'>
+      <div className='p-2 mx-4 mt-2 font-medium text-blue-900 rounded-md bg-blue-50'>
         {showDescription ? (
           <p>{show.description}</p>
         ) : (
