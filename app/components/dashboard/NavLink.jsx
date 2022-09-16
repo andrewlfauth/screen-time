@@ -6,6 +6,7 @@ function NavLink({to, title, children}) {
   return (
     <div className='relative group'>
       <Link 
+        prefetch='intent'
         to={to} 
         className={`${to === '/dashboard' ? activePath === to ?  "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-60" : activePath.includes(to) ? "bg-blue-50 text-gray-900" : "text-gray-400 hover:bg-blue-50 hover:bg-opacity-60"}
         rounded-md p-2 flex lg:justify-between`}
