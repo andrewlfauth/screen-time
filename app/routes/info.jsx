@@ -1,41 +1,41 @@
 function Index() {
   return (
     <div className='py-10 '>
-      <h1 className='px-4 text-lg lg:text-2xl font-semibold'>Info</h1>
+      <h1 className='px-4 text-lg font-semibold lg:text-2xl'>Info</h1>
       <p className='mt-10'>
         <span className='text-sm'>Created by:{" "}</span>
-        <span className='font-semibold block ml-2 text-blue-900 '>Andrew L Fauth</span>
+        <span className='block ml-2 font-semibold text-blue-900 '>Andrew L Fauth</span>
       </p>
       <p className='mt-4 lg:mt-6'>
         <span className='text-sm'>Assets by:{" "}</span>
         <a 
           href="https://www.figma.com/@andreykrivenko" target="_blank" 
           rel="noreferrer"
-          className='font-semibold block underline ml-2 text-blue-900'
+          className='block ml-2 font-semibold text-blue-900 underline'
         >
           Andrey Krivenko
         </a>
-        <span className="text-sm ml-4">
+        <span className="ml-4 text-sm">
           Little Book for Kidgarden
         </span>
         <a 
           href="https://www.figma.com/@Sujan_khadka" target="_blank" 
           rel="noreferrer"
-          className='font-semibold mt-2 block underline ml-2 text-blue-900'
+          className='block mt-2 ml-2 font-semibold text-blue-900 underline'
         >
           Sujan Khadka
         </a>
-        <span className="text-sm ml-4">
+        <span className="ml-4 text-sm">
           Vector Cute Animal Set Collection
         </span>
         <a 
           href="https://www.pbskids.org" target="_blank" 
           rel="noreferrer"
-          className='font-semibold mt-2 block underline ml-2 text-blue-900'
+          className='block mt-2 ml-2 font-semibold text-blue-900 underline'
         >
           PBS Kids
         </a>
-        <span className="text-sm ml-4">
+        <span className="ml-4 text-sm">
           Show Card Images
         </span>
       </p>
@@ -45,7 +45,7 @@ function Index() {
           href="https://github.com/andrewlfauth/screen-time" 
           target="_blank"
           rel="noreferrer"
-          className='font-semibold block underline ml-2 text-blue-900 '>Github</a>
+          className='block ml-2 font-semibold text-blue-900 underline '>Github</a>
       </p>
     </div>
   )
