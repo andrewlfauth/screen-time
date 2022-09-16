@@ -1378,6 +1378,16 @@ video {
   padding-right: 1.5rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1491,6 +1501,10 @@ video {
 
 .leading-\[1\.1\] {
   line-height: 1.1;
+}
+
+.leading-7 {
+  line-height: 1.75rem;
 }
 
 .tracking-tight {
@@ -1907,6 +1921,10 @@ video {
     min-width: 500px;
   }
 
+  .md\:max-w-none {
+    max-width: none;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1930,6 +1948,11 @@ video {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
   .md\:text-6xl {

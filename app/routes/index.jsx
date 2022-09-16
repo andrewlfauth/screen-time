@@ -14,7 +14,7 @@ export default function Index() {
             Make the Most of Your Child's {" "}
             <span className="text-blue-900">Screen Time</span>
           </h1>
-          <p className="max-w-xl mx-auto mt-2 font-medium text-gray-800 md:text-lg lg:mx-0">
+          <p className="max-w-xl mx-auto mt-2 text-sm font-medium leading-6 text-gray-800 md:text-lg lg:mx-0">
             Screen time doesn't have to be a waste of time. Nurture your child's learning by finding the television shows that fit their needs.
           </p>
           <div className="mt-12 space-x-4 lg:flex">
@@ -36,7 +36,7 @@ export default function Index() {
           <img 
             src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_400/v1663359129/Screen%20Time/zebra_df7pjl.png" 
             alt="zebra"
-            className='md:min-w-[500px] lg:min-w-[350px] lg:ml-4' 
+            className='max-w-[300px] md:max-w-none md:min-w-[500px] lg:min-w-[350px] lg:ml-4' 
           />
         </div>
       </div>
