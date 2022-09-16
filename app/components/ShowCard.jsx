@@ -6,7 +6,6 @@ import ShowInfo from './ShowInfo'
 import {BiInfoCircle} from 'react-icons/bi'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
-
 function ShowCard({show, action = "like", onClick, added}) {
   const [showInfo, setShowInfo] = useState(false)
   
