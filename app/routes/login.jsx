@@ -1,5 +1,5 @@
 import {loginUser} from '../services/users.server'
-import {Form, useActionData} from '@remix-run/react'
+import {Form, useActionData, Link} from '@remix-run/react'
 import {useState} from 'react'
 import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai'
 
@@ -15,7 +15,7 @@ function Index() {
   return (
     <div className="flex justify-center h-screen py-32 lg:items-center bg-neutral-50">
       <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
-        <Form method="post" className="p-10 relative bg-white rounded-md w-[350px]">
+        <Form method="post" className="p-10 pb-6 relative bg-white rounded-md w-[350px]">
           {
             action?.error && 
             <span className='absolute bottom-[10px] left-0 right-0 text-center font-semibold text-red-500'>{action.error}</span>
@@ -71,6 +71,12 @@ function Index() {
           >
             Login
           </button>
+          <p className='mt-4 text-sm text-center'>
+            Don't have an account?
+          </p>
+          <Link to="/get-started" className='block px-4 mx-auto text-sm font-medium text-center text-blue-500 w-fit'>
+            Sign up
+          </Link>
         </Form>
       </div>
     </div>
