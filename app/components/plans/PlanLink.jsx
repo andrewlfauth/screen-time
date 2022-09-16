@@ -28,7 +28,7 @@ function PlanLink({plan, creator}) {
   return (
     <Link
       to={creator ? `/dashboard/plans/${creator}/${plan.name}` : `/dashboard/plans/${plan.name}`}
-      className="flex p-4 space-x-4 bg-blue-50 border-2 border-gray-100 rounded-md shadow w-fit hover:border-blue-900"
+      className="flex p-4 space-x-4 border-2 border-gray-100 rounded-md shadow bg-slate-100 w-fit hover:border-blue-900"
     >
       <div>
         <span className='text-lg font-semibold'>{plan.name}</span>
