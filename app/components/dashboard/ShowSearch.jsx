@@ -114,8 +114,8 @@ function ShowSearch() {
         </div>
         <div className='items-end hidden -mb-2 select-none sm:flex'>
           <img 
-            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_175/v1663012532/Screen%20Time/image_13_1_nycrjx.png" 
-            alt="bear sitting"
+            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663361815/Screen%20Time/card_8_sft2og.png" 
+            alt="sloth"
           />
         </div>
       </div>
