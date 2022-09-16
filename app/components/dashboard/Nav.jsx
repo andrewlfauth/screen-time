@@ -7,7 +7,7 @@ import NavLink from './NavLink'
 
 function Nav() {  
   return (
-    <div className='w-12 lg:w-[225px] flex flex-col justify-between items-center h-screen fixed pt-32 pb-6 bg-white z-10'>
+    <div className='w-12 lg:w-[225px] flex flex-col justify-between items-center h-screen fixed pt-32 pb-20 lg:pb-6 bg-white z-10'>
       <div className='lg:w-full lg:px-3 space-y-1'>
         <NavLink to="/dashboard" title="Dashboard">
           <FiGrid className="text-2xl lg:mr-4" />

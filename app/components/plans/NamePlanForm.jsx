@@ -19,7 +19,7 @@ const NamePlanForm = forwardRef(function NamePlanForm({currentPlan, goBack}, ref
           <button 
             type="submit"
             disabled={transition.submission}
-            className='text-emerald-500 font-semibold'
+            className='text-emerald-500 text-lg font-semibold absolute -mt-[2px] right-4'
           >
             {transition.submission ? "Saving..." : "Save"}
           </button>

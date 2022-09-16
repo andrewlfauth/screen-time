@@ -5,13 +5,13 @@ function DeletePlanWarning({planName, show, cancel}) {
 
   return (
     <div className='absolute z-50 p-4 bg-white rounded shadow right-4 top-4'>
-      <p className='text-center'>
+      <p className='text-center font-semibold'>
         Are you sure you want to delete
         <br /> 
         {transition.submission ? (
-          <span className='text-lg font-medium text-red-500'>Deleting...</span>
+          <span className='text-lg font-bold text-red-500'>Deleting...</span>
         ) : (
-          <span className='text-lg font-medium text-blue-900'>{planName}</span>
+          <span className='text-lg font-bold text-blue-900'>{planName}</span>
         )}
       </p>
         <div className="flex justify-center mt-4 space-x-4">
