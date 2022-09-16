@@ -44,8 +44,8 @@ function Favorited({likes}) {
       </div>
         <div className='items-end hidden select-none sm:flex'>
           <img 
-            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663362110/Screen%20Time/zebra_1_hocfx8.png" 
-            alt="zebra" 
+            src="https://res.cloudinary.com/dpnkrz8c8/image/upload/w_180/v1663361694/Screen%20Time/card_7_ohj31q.png" 
+            alt="koala" 
           />
         </div>
       </div>
