@@ -4,6 +4,8 @@ import {getUser} from '~/services/users.server'
 import {getFeaturedPlans} from '~/services/plans.server'
 import { useLoaderData } from '@remix-run/react'
 import Hero from '../../components/dashboard/Hero'
+import { userAtom } from "../dashboard"
+import {useAtom} from 'jotai'
 
 export async function loader({request}) {
   const user = await getUser(request)
@@ -13,6 +15,8 @@ export async function loader({request}) {
 
 function Index() {
   const data = useLoaderData()
+  const [, setUser] = useAtom(userAtom)
+  setUser(data.user)
 
   return (
     <div className='md:w-[630px] lg:w-[650px]'>
