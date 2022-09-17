@@ -77,7 +77,11 @@ function Index() {
             type="submit"
             className="w-full py-2 mt-6 font-semibold text-white bg-blue-900 rounded-md"
           >
-            Login
+            {
+              transition.state === "loading" ||
+              transition.state === "submitting" ?
+              "Loading..." : "Login"
+            }
           </button>
           <p className='mt-4 text-sm text-center'>
             Don't have an account?
