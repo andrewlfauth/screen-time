@@ -1,53 +1,42 @@
-# Welcome to Remix!
+# Screen Time
 
-- [Remix Docs](https://remix.run/docs)
+## Table of Contents
 
-## Development
+- [Overview](#overview)
+- [Built With](#built-with)
+- [Features](#features)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-From your terminal:
+## Overview
 
-```sh
-npm run dev
-```
+![desktop view](https://res.cloudinary.com/dpnkrz8c8/image/upload/v1663374656/Screen%20Time/desktop_rcg8qk.png)
 
-This starts your app in development mode, rebuilding assets on file changes.
+Check out the [live demo](https://screen-time.vercel.app)
 
-## Deployment
+Having a 4 year old at home, I've spent my fair share of time watching television shows that were made for children. So, I made this app to help parents optimized their child's screen time.
 
-First, build your app for production:
+### Built With
 
-```sh
-npm run build
-```
+- [Remix](https://remix.run)
+- [React](https://reactjs.org)
+- [Tailwindcss](https://tailwindcss.com)
+- [MongoDB](https://mongodb.com)
+- [Mongoose](https://mongoosejs.com)
+- [Jotai](https://jotai.org)
 
-Then run the app in production mode:
+## Features
 
-```sh
-npm start
-```
+- A catalog of children shows including information such as recommended ages, teaching focus, and show description.
+- Search for shows based on age and teaching focus. 
+- Save shows in a plan and see how your child responds to them.
+- Like and unlike functionality to keep track of the shows that work for your child.
+- View plans created by other users.
 
-Now you'll need to pick a host to deploy it to.
+## Contact
 
-### DIY
+andrewlfauth@gmail.com
 
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
+## Acknowledgements
 
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+Thanks to [Andrey Krivenko](https://www.figma.com/@andreykrivenko) and [Sujan Khadka](https://www.figma.com/@Sujan_khadka) for the cute animal illustartions, and [PBS Kids](https://pbskids.org) for the show images.
