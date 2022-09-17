@@ -1,12 +1,22 @@
 import ShowCard from '~/components/ShowCard'
 import shows from '~/shows.json'
 import {FaRegHeart, FaHeart, FaBaby} from 'react-icons/fa'
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 import {BiInfoCircle} from 'react-icons/bi'
+import {useFetchers} from '@remix-run/react'
 
 function Favorited({likes}) {
-  const favoriteShows = shows.filter(s => likes.includes(s.title))
+  const fetchers = useFetchers()
+  let favoriteShows = shows.filter(s => likes.includes(s.title))
   const [clicked, setClicked] = useState(false)
+  const unliked = useRef([])
+
+  for (const f of fetchers) {
+    if (f.submission && f.state === "submitting") {
+      let unlikedShow = f.submission?.formData?.get("show")
+      unliked.current = [...unliked.current, unlikedShow]
+    }
+  }
 
   return (
     <div className='w-full px-4 py-6 bg-white rounded-md shadow sm:pt-8 sm:pb-4 md:w-fit'>
@@ -51,8 +61,9 @@ function Favorited({likes}) {
       </div>
       {likes.length ? (
         <div className='grid gap-2 pt-4 mt-4 border-t sm:grid-cols-2'>
-          {favoriteShows.map(s => 
-            <ShowCard key={s.title} show={s} />
+          {favoriteShows
+            .filter(f => !unliked.current.includes(f.title))
+            .map(s => <ShowCard key={s.title} show={s} />
           )}
         </div>
       ) : ""}
