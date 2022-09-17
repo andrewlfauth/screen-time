@@ -18,7 +18,7 @@ function Index() {
   const [showPw, setShowPw] = useState(false)
   const [showPwChanger, setShowPwChanger] = useState(false)
   const showError = 
-    action?.error && transition.state !== "submitting"
+    action?.error && transition.state !== "loading"
 
   return (
     <div className="flex justify-center h-screen py-32 lg:items-center bg-neutral-50">
