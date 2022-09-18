@@ -21,6 +21,7 @@ Having a 4 year old at home, I've spent my fair share of time watching televisio
 - [Remix](https://remix.run)
 - [React](https://reactjs.org)
 - [Tailwindcss](https://tailwindcss.com)
+- [Cloudinary](https://cloudinary.com)
 - [MongoDB](https://mongodb.com)
 - [Mongoose](https://mongoosejs.com)
 - [Jotai](https://jotai.org)
