@@ -1,16 +1,32 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {FaBaby} from 'react-icons/fa'
 import LikeButton from './LikeButton'
 import AddButton from './AddButton'
 import ShowInfo from './ShowInfo'
 import {BiInfoCircle} from 'react-icons/bi'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
+import {useFetchers, useLocation} from '@remix-run/react'
 
 function ShowCard({show, action = "like", onClick, added}) {
   const [showInfo, setShowInfo] = useState(false)
-  
+  const fetchers = useFetchers()
+  const path = useLocation().pathname
+  let a = useRef([])
+
+  if (path === '/dashboard/favorites') {
+    for (const f of fetchers) {
+      if ( 
+        f.state === "submitting" && 
+        f.submission.formData?.get("show") &&
+        action === "like"
+        ) {
+        a.current = [...a.current, f.submission.formData?.get("show")]
+      }
+    }
+  }
+
   return (
-    <div className="flex flex-col shadow rounded-t-md max-w-[300px] md:w-auto">
+    <div className={`${a.current.includes(show.title) ? "hidden" : ""} flex flex-col shadow rounded-t-md max-w-[300px] md:w-auto`}>
       <div className='relative max-w-sm'>
         <ShowInfo toggle={showInfo} show={show} />
         <img src={show.image} alt={show.title} className='w-full aspect-auto rounded-t-md' />
