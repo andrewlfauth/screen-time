@@ -20,13 +20,13 @@ export default function Index() {
           <div className="mt-12 space-x-4 lg:flex">
             <Link
               to="/get-started"
-              className="px-6 py-3 text-lg font-semibold text-white bg-blue-900 border-4 border-blue-900 rounded-md md:px-12 hover:bg-opacity-90 hover:border-opacity-10"
+              className="px-6 py-3 text-lg font-semibold text-white duration-300 bg-blue-900 border-4 border-blue-900 rounded-md md:px-12 hover:bg-opacity-90 hover:border-opacity-10 hover:ring-4 hover:ring-offset-2 hover:ring-blue-900"
             >
               Get Started
             </Link>
             <Link
               to="/login"
-              className="px-6 py-3 text-lg font-semibold border-4 border-black rounded-md md:px-12 hover:skew-x-3"
+              className="px-6 py-3 text-lg font-semibold duration-300 border-4 border-black rounded-md md:px-12 hover:ring-4 hover:ring-offset-2 hover:ring-black"
             >
               Login
             </Link>
