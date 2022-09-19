@@ -47,7 +47,6 @@ export async function loginUser(request) {
   return {error: "Invalid username or password 😿"}
 
   return redirect('/dashboard', {
-    status: 200,
     headers: {
       "Set-Cookie": userId,
       "Max-Age": 60 * 60 * 1000
