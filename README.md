@@ -14,7 +14,7 @@
 
 Check out the [live demo](https://screen-time.vercel.app)
 
-Having a 4 year old at home, I've spent my fair share of time watching television shows that were made for children. So, I made this app to help parents optimized their child's screen time.
+Having a 4 year old at home, I've spent my fair share of time watching television shows that were made for children. So, I made this app to help parents optimize their child's screen time.
 
 ### Built With
 
