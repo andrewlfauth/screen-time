@@ -1,5 +1,5 @@
-const { RemixBrowser } = require("@remix-run/react");
+const { RemixBrowser } = require('@remix-run/react')
 
-const { hydrateRoot } = require("react-dom/client");
+const { hydrateRoot } = require('react-dom/client')
 
-hydrateRoot(document, <RemixBrowser />);
+hydrateRoot(document, <RemixBrowser />)

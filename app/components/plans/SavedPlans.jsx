@@ -1,22 +1,18 @@
 import PlanLink from './PlanLink'
 
-function SavedPlans({plans}) {
+function SavedPlans({ plans }) {
   return (
-    <div className="w-full p-4 bg-white rounded-md shadow h-fit">
-      <h2 className='mb-2 text-lg font-semibold'>
-       🌱 Your Plans
-      </h2>
-      {
-        plans.length ? (
-          <div className='space-y-2'>
-            {plans.map((plan) => (
-              <PlanLink key={plan.name} plan={plan} />
-            ))}
-          </div>
-        ) : (
-          <p>Your plans will live here 🏡</p>
-        )
-      }
+    <div className='w-full p-4 bg-white rounded-md shadow h-fit'>
+      <h2 className='mb-2 text-lg font-semibold'>🌱 Your Plans</h2>
+      {plans.length ? (
+        <div className='space-y-2'>
+          {plans.map((plan) => (
+            <PlanLink key={plan.name} plan={plan} />
+          ))}
+        </div>
+      ) : (
+        <p>Your plans will live here 🏡</p>
+      )}
     </div>
   )
 }

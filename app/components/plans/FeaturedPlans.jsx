@@ -1,20 +1,20 @@
-import PlanLink from "./PlanLink"
+import PlanLink from './PlanLink'
 
-function FeaturedPlans({plans}) {
+function FeaturedPlans({ plans }) {
   return (
-    <div className="w-full p-4 bg-white rounded-md shadow">
-      <h2 className="mb-2 text-lg font-semibold">
-        📰 Featured Plans
-      </h2>
-      <p className='max-w-xs mb-2 text-sm tracking-tight text-gray-600'>These plans were created by other parents</p>
-      <div className="space-y-2">
-        {plans.map(plan => 
-          <PlanLink 
-            key={plan.username} 
-            plan={plan.plan} 
-            creator={plan.username} 
+    <div className='w-full p-4 bg-white rounded-md shadow'>
+      <h2 className='mb-2 text-lg font-semibold'>📰 Featured Plans</h2>
+      <p className='max-w-xs mb-2 text-sm tracking-tight text-gray-600'>
+        These plans were created by other parents
+      </p>
+      <div className='space-y-2'>
+        {plans.map((plan) => (
+          <PlanLink
+            key={plan.username}
+            plan={plan.plan}
+            creator={plan.username}
           />
-        )}
+        ))}
       </div>
     </div>
   )

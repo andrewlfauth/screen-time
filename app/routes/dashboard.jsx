@@ -1,12 +1,12 @@
-import {getUser} from '~/services/users.server'
-import { useLoaderData, Outlet} from '@remix-run/react'
-import {atom, useAtom} from 'jotai'
+import { getUser } from '~/services/users.server'
+import { useLoaderData, Outlet } from '@remix-run/react'
+import { atom, useAtom } from 'jotai'
 import { redirect } from '@remix-run/node'
 import Header from '~/components/dashboard/Header'
 
-export const userAtom = atom("")
+export const userAtom = atom('')
 
-export async function loader({request}) {
+export async function loader({ request }) {
   const user = await getUser(request)
   return user ? user : redirect('/')
 }

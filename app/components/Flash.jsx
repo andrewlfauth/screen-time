@@ -1,8 +1,6 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
-
-
-function Flash({duration, className, children}) {
+function Flash({ duration, className, children }) {
   const [hide, setHide] = useState(false)
 
   useEffect(() => {
@@ -13,11 +11,7 @@ function Flash({duration, className, children}) {
     return () => clearTimeout(timeout)
   }, [duration])
 
-  return hide ? null : (
-    <div className={className}>
-      {children}
-    </div>
-  )
+  return hide ? null : <div className={className}>{children}</div>
 }
 
 export default Flash

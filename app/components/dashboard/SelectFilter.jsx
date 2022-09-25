@@ -1,16 +1,19 @@
 import Select from 'react-select'
-import {forwardRef} from 'react'
+import { forwardRef } from 'react'
 
-const SelectFilter = forwardRef(function SelectFilter({name, options, onChange, className}, ref) {
+const SelectFilter = forwardRef(function SelectFilter(
+  { name, options, onChange, className },
+  ref
+) {
   return (
     <div>
-      <label 
+      <label
         htmlFor={name}
-        className='block mb-2 text-g font-medium text-neutral-500'
+        className='block mb-2 font-medium text-g text-neutral-500'
       >
         {name[0].toUpperCase() + name.substring(1)}
       </label>
-      <Select 
+      <Select
         ref={ref}
         name={name}
         isMulti
@@ -18,7 +21,7 @@ const SelectFilter = forwardRef(function SelectFilter({name, options, onChange, 
         options={options}
         onChange={onChange}
         className={className}
-      />  
+      />
     </div>
   )
 })

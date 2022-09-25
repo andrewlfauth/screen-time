@@ -1,16 +1,16 @@
 import FeaturedShow from '~/components/dashboard/FeaturedShow'
 import FeaturedPlans from '../../components/plans/FeaturedPlans'
-import {getUser} from '~/services/users.server'
-import {getFeaturedPlans} from '~/services/plans.server'
+import { getUser } from '~/services/users.server'
+import { getFeaturedPlans } from '~/services/plans.server'
 import { useLoaderData } from '@remix-run/react'
 import Hero from '../../components/dashboard/Hero'
-import { userAtom } from "../dashboard"
-import {useAtom} from 'jotai'
+import { userAtom } from '../dashboard'
+import { useAtom } from 'jotai'
 
-export async function loader({request}) {
+export async function loader({ request }) {
   const user = await getUser(request)
-  const featuredPlans = await getFeaturedPlans({request})
-  return {user, featuredPlans}
+  const featuredPlans = await getFeaturedPlans({ request })
+  return { user, featuredPlans }
 }
 
 function Index() {
@@ -28,7 +28,6 @@ function Index() {
           <FeaturedShow />
           <FeaturedPlans plans={data.featuredPlans} />
         </div>
-      
       </div>
     </div>
   )
