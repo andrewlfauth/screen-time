@@ -1,27 +1,22 @@
 import ShowSearch from '~/components/dashboard/ShowSearch'
-import {handleLike, getUser} from '../../services/users.server'
-import {useLoaderData} from '@remix-run/react'
-import { userAtom } from "../dashboard"
-import {useAtom} from 'jotai'
+import { handleLike } from '../../services/users.server'
+import { useMatches } from '@remix-run/react'
+import { userAtom } from '../dashboard'
+import { useAtom } from 'jotai'
 
-export async function action({request}) {
+export async function action({ request }) {
   await handleLike(request)
   return null
 }
 
-export async function loader({request}) {
-  const user = await getUser(request)
-  return user
-}
-
 function Index() {
-  const userData = useLoaderData()
+  const matches = useMatches()
+  const user = matches.find((m) => m.pathname === '/dashboard').data
   const [, setUser] = useAtom(userAtom)
-  setUser(userData)
-
+  setUser(user)
   return (
     <div>
-      <ShowSearch />        
+      <ShowSearch />
     </div>
   )
 }
