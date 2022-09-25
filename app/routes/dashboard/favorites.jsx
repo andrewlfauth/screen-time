@@ -1,15 +1,8 @@
-import Favorited from "../../components/dashboard/Favorited"
-import {getUser} from "../../services/users.server"
-import {useLoaderData} from '@remix-run/react'
-
-
-export async function loader({request}) {
-  const user = await getUser(request)
-  return user.likes
-}
+import Favorited from '../../components/dashboard/Favorited'
+import { useMatches } from '@remix-run/react'
 
 function Index() {
-  const likes = useLoaderData()
+  const likes = useMatches().find((m) => m.pathname === '/dashboard').data.likes
 
   return (
     <div>
