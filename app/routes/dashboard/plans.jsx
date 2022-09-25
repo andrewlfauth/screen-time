@@ -1,19 +1,19 @@
-import {useState, useEffect, useRef} from 'react'
+import { useState, useEffect, useRef } from 'react'
 import SavedPlans from '~/components/plans/SavedPlans'
 import FeaturedPlans from '~/components/plans/FeaturedPlans'
 import Hero from '../../components/plans/Hero'
-import { getUser } from "~/services/users.server"
-import { createPlan, getFeaturedPlans } from "~/services/plans.server"
+import { getUser } from '~/services/users.server'
+import { createPlan, getFeaturedPlans } from '~/services/plans.server'
 import { useLoaderData, useActionData } from '@remix-run/react'
 
-export async function action({request}) {
+export async function action({ request }) {
   return createPlan(request)
 }
 
-export async function loader({request}) {
+export async function loader({ request }) {
   const user = await getUser(request)
   const featuredPlans = await getFeaturedPlans(user.username)
-  return {savedPlans: user.plans, featuredPlans}
+  return { savedPlans: user.plans, featuredPlans }
 }
 
 function Index() {
@@ -44,12 +44,12 @@ function Index() {
     { value: 'science', label: 'Science' },
     { value: 'social skills', label: 'Social Skills' },
     { value: 'teamwork', label: 'Teamwork' },
-    { value: 'vocabulary', label: 'Vocabulary' }
+    { value: 'vocabulary', label: 'Vocabulary' },
   ]
   const updatePlan = (e) => {
     const show = e.target.getAttribute('data-show-image')
     if (currentPlan.includes(show)) {
-      return setCurrentPlan(currentPlan.filter(c => c !== show))
+      return setCurrentPlan(currentPlan.filter((c) => c !== show))
     }
     return setCurrentPlan([...currentPlan, show])
   }
@@ -64,7 +64,7 @@ function Index() {
 
   return (
     <div className='w-full'>
-      <Hero 
+      <Hero
         selectRef={selectRef}
         focusOptions={focusOptions}
         onClick={updatePlan}
@@ -73,9 +73,13 @@ function Index() {
         currentPlan={currentPlan}
         focus={focus}
         onChange={(e) => setFocus(e)}
-        removeImage={(e) => 
-          setCurrentPlan(currentPlan.filter(s => 
-            s !== e.target.parentElement.getAttribute('data-image')))}
+        removeImage={(e) =>
+          setCurrentPlan(
+            currentPlan.filter(
+              (s) => s !== e.target.parentElement.getAttribute('data-image')
+            )
+          )
+        }
       />
       <div className='flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
         <SavedPlans plans={plans.savedPlans} />
