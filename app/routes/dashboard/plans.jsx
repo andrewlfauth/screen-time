@@ -22,6 +22,7 @@ function Index() {
   const selectRef = useRef(null)
   const [focus, setFocus] = useState([])
   const [currentPlan, setCurrentPlan] = useState([])
+
   const focusOptions = [
     { value: 'animals', label: 'Animals' },
     { value: 'art', label: 'Art' },
@@ -46,6 +47,7 @@ function Index() {
     { value: 'teamwork', label: 'Teamwork' },
     { value: 'vocabulary', label: 'Vocabulary' },
   ]
+
   const updatePlan = (e) => {
     const show = e.target.getAttribute('data-show-image')
     if (currentPlan.includes(show)) {
