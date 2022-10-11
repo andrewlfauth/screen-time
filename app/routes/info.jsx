@@ -2,6 +2,7 @@ function Index() {
   return (
     <div className='py-10 '>
       <h1 className='px-4 text-lg font-semibold lg:text-2xl'>Info</h1>
+
       <p className='mt-10'>
         <span className='text-sm'>Created by: </span>
         <a
