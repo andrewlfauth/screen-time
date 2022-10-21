@@ -70,7 +70,11 @@ export async function loader() {
 
 export default function App() {
   const path = useLocation().pathname
-  let showSidebar = path !== '/login' && path !== '/get-started' && path !== '/'
+  let showSidebar =
+    path !== '/login' &&
+    path !== '/get-started' &&
+    path !== '/' &&
+    path !== '/info'
 
   return (
     <html lang='en'>
