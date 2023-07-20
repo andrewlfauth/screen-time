@@ -16,6 +16,8 @@ Check out the [live demo](https://screen-time.vercel.app)
 
 Having a 4 year old at home, I've spent my fair share of time watching television shows that were made for children. So, I made this app to help parents optimize their child's screen time.
 
+Disclaimer: I am no longer maintaining this app. This app was built as a portfolio project about a year into my coding journey. 
+
 ### Built With
 
 - [Remix](https://remix.run)
