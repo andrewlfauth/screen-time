@@ -12,11 +12,11 @@
 
 ![desktop view](https://res.cloudinary.com/dpnkrz8c8/image/upload/v1663374656/Screen%20Time/desktop_rcg8qk.png)
 
+Disclaimer: I am no longer maintaining this app. This app was built as a portfolio project about a year into my coding journey. 
+
 Check out the [live demo](https://screen-time.vercel.app)
 
 Having a 4 year old at home, I've spent my fair share of time watching television shows that were made for children. So, I made this app to help parents optimize their child's screen time.
-
-Disclaimer: I am no longer maintaining this app. This app was built as a portfolio project about a year into my coding journey. 
 
 ### Built With
 
